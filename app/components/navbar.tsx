@@ -1,13 +1,11 @@
 "use client"
 
-import { usePathname } from 'next/navigation';
+// import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Logo, Members, Contact } from './svg/400m';
 
 
-import { useScroll, useMotionValueEvent } from "framer-motion";
-import { useEffect, useState } from "react";
-import useResize from "../lib/util/useResize";
+
 
 
 export default function Navbar({phase, setPhase}){

@@ -1,7 +1,5 @@
 import { getData } from "../lib/util/sanity";
-import { PortableText } from "next-sanity";
-import Image from "next/image";
-import { Reveal } from "@/app/lib/reveal";
+
 
 export default async function Home() {
   const query = await getData(`{

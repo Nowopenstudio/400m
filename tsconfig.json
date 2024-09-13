@@ -13,6 +13,7 @@
     "jsx": "preserve",
     "incremental": true,
     "noImplicitAny": false,
+    "@typescript-eslint/no-unused-vars" : "off",
     "plugins": [
       {
         "name": "next"

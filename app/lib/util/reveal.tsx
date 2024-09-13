@@ -2,22 +2,22 @@
 
 import React, {useEffect, useRef } from 'react';
 import {motion, useInView, useAnimation } from "framer-motion";
-import { relative } from 'path';
+// import { relative } from 'path';
 
-interface Props {
-    children: JSX.Element;
-    width?:"100vw"
-}
+// interface Props {
+//     children: JSX.Element;
+//     width?:"100vw"
+// }
 
-const variants = {
-    visible: i => ({
-      opacity: 1,
-      transition: {
-        delay: i * 1,
-      },
-    }),
-    hidden: { opacity: 0 },
-  }
+// const variants = {
+//     visible: i => ({
+//       opacity: 1,
+//       transition: {
+//         delay: i * 1,
+//       },
+//     }),
+//     hidden: { opacity: 0 },
+//   }
 
 export function Reveal({children, styleSet, count}){
    const ref= useRef(null!)
