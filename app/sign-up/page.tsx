@@ -25,8 +25,8 @@ export default async function Home() {
 
               </div>
           </div>
-          <div className="grid grid-cols-12 w-full ">
-            <div className="col-span-12 relative mb-[40px]">
+          <div className="grid grid-cols-12 w-full">
+            <div className="col-span-12 relative mb-[40px] overflow-hidden">
             <div className="bufferHold w-[calc(100vw/4)] relative pointer-events-none z-0 opacity-0">
             
             <div className="projHold p-[10px] grid grid-cols-[1fr_5fr] items-center">
