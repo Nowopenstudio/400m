@@ -25,7 +25,7 @@ export default async function Home() {
           <div className="grid grid-cols-12 w-full">
            <div className="col-start-4 col-span-6">
               {about.manifesto?(
-                about.manifesto[0].content.map((item,i)=>{
+                about.manifesto[0].content.map((item:any,i:any)=>{
                   return(
                     <PortableText key={`manifest-${i}`} value={item.content}/>
                   )

@@ -19,7 +19,7 @@ import {motion, useInView, useAnimation } from "framer-motion";
 //     hidden: { opacity: 0 },
 //   }
 
-export function Reveal({children, styleSet, count}){
+export function Reveal({children, styleSet, count}:any){
    const ref= useRef(null!)
    const isInView = useInView(ref,{once:true})
    const mainControls = useAnimation();
