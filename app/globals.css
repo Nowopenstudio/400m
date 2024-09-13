@@ -5,23 +5,67 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bar: 45px;
+}
+/* FONT */
+h1{
+  text-transform: uppercase;
+  font-size:48pt;
+  font-weight: bold;
+  line-height: .875em;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+h2{
+  text-transform: uppercase;
+  font-size:12pt;
+  font-weight: bold;
+  line-height: .875em;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.text-sm, .text-sm p{
+  font-size: 9pt;
+  line-height: 1em;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* NAV */
+.nav-item{
+  transition: all ease-in-out .25s;
+  height:var(--bar);
 }
+
+.logo{
+  top:8px;
+  left:8px;
+  transition: all ease-in-out .5s;
+}
+
+.phase-0 .logo{
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%) scale(8.0);
+
+}
+
+.phase-0 .nav-top{
+  height:100vh
+}
+
+.phase-1 .nav-top{
+  height:calc(100vh - (var(--bar)*2));
+}
+
+.phase-2 .nav-mid{
+  height:calc(100vh - (var(--bar)*2));
+}
+
+.phase-3 .nav-low{
+  height:calc(100vh - (var(--bar)*2));
+}
+
+/* layout */
+.buff{
+  padding-bottom:56.25% ;
+}
+
+
+
