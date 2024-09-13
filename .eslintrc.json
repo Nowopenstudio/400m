@@ -1,7 +1,7 @@
 {
   "extends": "next",
   "rules": {
-    "noImplicitAny": false,
-    "noUnusedParameters": false
+    "noImplicitAny": 0,
+    "noUnusedParameters": 0
   }
 }
