@@ -12,8 +12,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "noImplicitAny": false,
-    "noUnusedParameters": false,
     "plugins": [
       {
         "name": "next"
@@ -22,6 +20,10 @@
     "paths": {
       "@/*": ["./*"]
     }
+  },
+  "rules":{
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
