@@ -18,7 +18,7 @@ export function urlFor(source: any){
     return builder.image(source)
 }
 
-export const getData = (async (query) =>{
+export const getData = (async (query:any) =>{
    
   const initQuery = query
   const data = await client.fetch(initQuery,{},
@@ -28,11 +28,11 @@ export const getData = (async (query) =>{
 })
 
 
- export const getRandom =(min, max)=>{
+ export const getRandom =(min:any, max:any)=>{
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-export const getRandomA =(min, max)=>{
+export const getRandomA =(min:any, max:any)=>{
     return (Math.random() * (max - min) + min);
 }
 
