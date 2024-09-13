@@ -10,7 +10,7 @@ interface Props {
 }
 
 const variants = {
-    visible: i => ({
+    visible: (i:any) => ({
       opacity: 1,
       transition: {
         delay: i * 1,
