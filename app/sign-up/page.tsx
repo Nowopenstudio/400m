@@ -43,7 +43,7 @@ export default async function Home() {
             </div>
            <div className="col-start-4 col-span-6">
               {preface?(
-                preface[0].content.map((item,i)=>{
+                preface[0].content.map((item:any,i:any)=>{
                   return(
                     <PortableText key={`manifest-${i}`} value={item.content}/>
                   )

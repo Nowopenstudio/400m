@@ -12,7 +12,6 @@
     "jsx": "preserve",
     "incremental": true,
     "noImplicitAny": false,
-    "@typescript-eslint/no-unused-vars" : "off"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
