@@ -1,7 +1,7 @@
 'use client'
 import { motion } from "framer-motion";
 
-export default function Template({children}){
+export default function Template({children}:any){
     return(
         <motion.div className="w-screen"
             initial={{opacity:0}}
