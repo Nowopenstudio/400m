@@ -9,7 +9,7 @@ import { Reveal } from "../lib/util/reveal";
 import { PortableText } from "next-sanity";
 
 
-export default function Portfolio({work}) {
+export default function Portfolio({work}:any) {
   console.log(work)
     let [ref, {width}] = useMeasure();
 const xTranslation = useMotionValue(0)

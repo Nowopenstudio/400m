@@ -6,6 +6,8 @@
   --background: #ffffff;
   --foreground: #171717;
   --bar: 45px;
+  --black: #282828;
+  --white: #ffffff;
 }
 /* FONT */
 h1{
@@ -67,5 +69,12 @@ h2{
   padding-bottom:56.25% ;
 }
 
+.toggle-bar{
+  transition: all ease-in-out .25s;
+  left:0;
+}
 
+.toggle-right .toggle-bar{
+  left: 50%;
+}
 
