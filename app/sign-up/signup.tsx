@@ -13,7 +13,7 @@ export default function SignUp({form,sec}:any) {
     const [page, setPage] = useState(0)
     const [profile,setPro] = useState({})
 
-    const step =(sec)=>{
+    const step =(sec:any)=>{
        const curr = page + sec
        setPage(curr)
     

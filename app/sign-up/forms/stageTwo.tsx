@@ -21,7 +21,7 @@ export default function StageOne({form}:any) {
                  ):('')}
              
              <div className="col-start-4 col-span-6 grid grid-cols-2 gap-[20px]">
-              {form.single.map((item,i)=>{
+              {form.single.map((item:any,i:any)=>{
                 return(
                   <div className=" py-[10px] col-span-2 mb-[60px]">
                     <PortableText value={item.content}/>

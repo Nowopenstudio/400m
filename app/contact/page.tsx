@@ -22,7 +22,7 @@ export default async function Home() {
       <input className="col-span-1 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Name"></input>
       <input className="col-span-1 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Email"></input>
       <input className="col-span-2 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Subject"></input>
-      <textarea className="border border-[--black] col-span-full rounded-[10px] p-[20px] min-h-[200px]" type="text" placeholder="Message"></textarea>
+      <textarea className="border border-[--black] col-span-full rounded-[10px] p-[20px] min-h-[200px]" placeholder="Message"></textarea>
      </form>
    </div>
   </div>

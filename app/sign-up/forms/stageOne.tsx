@@ -21,11 +21,11 @@ export default function StageOne({form}:any) {
                  ):('')}
              
              <div className="col-start-4 col-span-6 grid grid-cols-2 gap-[20px]">
-              {form.single.map((item,i)=>{
+              {form.single.map((item:any,i:any)=>{
                 return(
                   <div className=" py-[10px] col-span-2 mb-[60px]">
                     <PortableText value={item.content}/>
-                    <textarea className="mt-[20px] border border-[--black] w-full rounded-[10px] p-[20px] min-h-[150px]" type="text" placeholder="..."></textarea>
+                    <textarea className="mt-[20px] border border-[--black] w-full rounded-[10px] p-[20px] min-h-[150px]" placeholder="..."></textarea>
                   </div>
                 )
               })}

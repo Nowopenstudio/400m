@@ -17,7 +17,7 @@ export default function Content({preface,form,prod}:any) {
     const [signup, setSign] = useState(0)
   console.log('preface',preface)
 
- const toggleSec =(sec)=>{
+ const toggleSec =(sec:any)=>{
     setSec(sec);
 
   }
@@ -39,7 +39,7 @@ export default function Content({preface,form,prod}:any) {
                             <Portfolio work={prod}/>
                         </div>
                         <div className="col-start-4 col-span-6 pt-[60px]">
-                            {preface.content.map((item, i)=>{
+                            {preface.content.map((item:any, i:any)=>{
                                 return(
                                     <PortableText value={item.content}/>
                                 )
