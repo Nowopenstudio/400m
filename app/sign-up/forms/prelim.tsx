@@ -24,7 +24,7 @@ export default function Prelim({form}:any) {
              <div className="col-start-3 col-span-8 grid grid-cols-2 gap-[20px]">
               {form.single.map((item:any,i:any)=>{
                 return(
-                  <div className="uppercase py-[10px] px-[10px] col-span-1 border border-[--black] rounded-full text-nav">
+                  <div  key={`prelim-${i}`} className="uppercase py-[10px] px-[10px] col-span-1 border border-[--black] rounded-full text-nav">
                     <PortableText value={item.content}/>
                   </div>
                 )

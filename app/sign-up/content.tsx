@@ -41,7 +41,7 @@ export default function Content({preface,form,prod}:any) {
                         <div className="col-start-4 col-span-6 pt-[60px]">
                             {preface.content.map((item:any, i:any)=>{
                                 return(
-                                    <PortableText value={item.content}/>
+                                    <PortableText key={`item-${i}`} value={item.content}/>
                                 )
                             })}
                                 <div className={`mt-[80px] py-[10px] bg-[--black] text-white uppercase relative col-span-4 col-start-5 border border-black text-nav text-center rounded-full`} onClick={() => setSign(1)}>{`Apply to 400m: ${sec==0?"Production":"D+D"}`}</div>
