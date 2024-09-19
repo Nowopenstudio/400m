@@ -23,6 +23,8 @@ export default async function Home() {
       <input className="col-span-1 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Email"></input>
       <input className="col-span-2 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Subject"></input>
       <textarea className="border border-[--black] col-span-full rounded-[10px] p-[20px] min-h-[200px]" placeholder="Message"></textarea>
+      <div className={`py-[10px] bg-[--black] text-white uppercase relative col-span-full border border-black text-nav text-center rounded-full mb-[20px]`}>{`Submit Inquiry`}</div>
+
      </form>
    </div>
   </div>
