@@ -16,8 +16,8 @@ export default function Manifesto({content}:any) {
   
   return (
    
-    
-    <div className="col-start-4 col-span-6">
+  
+    <Reveal styleSet="col-start-4 col-span-6">
     {content?(
     content.map((item:any,i:any)=>{
         return(
@@ -25,7 +25,7 @@ export default function Manifesto({content}:any) {
         )
     })
     ):('')}
-</div>
+</Reveal>
   
 
 

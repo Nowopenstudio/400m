@@ -1,5 +1,6 @@
 'use client'
 import { motion } from "framer-motion";
+import { translate } from "maath/dist/declarations/src/buffer";
 
 export default function Template({children}:any){
     return(

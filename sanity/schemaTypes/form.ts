@@ -20,6 +20,12 @@ export default{
                     title:"Title"
                 },
                 {
+                    name:"intro",
+                    type:'array',
+                    title:'intro',
+                    of:[{type:'block'}]
+                },
+                {
                     name:"type",
                     type:'boolean',
                     title:"Checklist",

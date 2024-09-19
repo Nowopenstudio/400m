@@ -16,16 +16,17 @@ export default function Principles({content}:any) {
   
   return (
    
-    
-    <div className="col-start-4 col-span-6">
-    {content?(
-    content.map((item:any,i:any)=>{
-        return(
-        <PortableText key={`manifest-${i}`} value={item.content}/>
-        )
-    })
-    ):('')}
-</div>
+
+      <Reveal styleSet="col-start-4 col-span-6">
+      {content?(
+      content.map((item:any,i:any)=>{
+          return(
+          <PortableText key={`manifest-${i}`} value={item.content}/>
+          )
+      })
+      ):('')}
+      </Reveal>
+
   
 
 

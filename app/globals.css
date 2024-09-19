@@ -9,31 +9,66 @@
   --black: #282828;
   --white: #ffffff;
 }
+
+/* font embeds */
+@font-face {
+	font-family: 'sans';
+	src: url('/fonts/euro.woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'sans-ex';
+	src: url('/fonts/euroEX.woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
 /* FONT */
+body{
+  font-family: 'sans', 'helvetica','arial'; 
+  font-weight: 500;
+  font-size: 1.25em;
+
+}
+
 h1{
   text-transform: uppercase;
-  font-size:48pt;
+  font-size:18pt;
   font-weight: bold;
   line-height: .875em;
 }
 
 h2{
-  text-transform: uppercase;
-  font-size:12pt;
-  font-weight: bold;
+  font-family: 'sans-ex', 'helvetica','arial'; 
+  font-size:10pt;
   line-height: .875em;
 }
+
+p, ul, ol{
+  font-size: 1.25em;
+}
+
+
 
 .text-sm, .text-sm p{
   font-size: 9pt;
   line-height: 1em;
 }
+.text-nav{
+  font-family: 'sans-ex', 'helvetica','arial'; 
+  font-size:7pt;
+  letter-spacing: 1em;
+}
+
 
 /* NAV */
 .nav-item{
   transition: all ease-in-out .25s;
   height:var(--bar);
 }
+
 
 .logo{
   top:8px;
@@ -61,6 +96,10 @@ h2{
 }
 
 .phase-3 .nav-low{
+  height:calc(100vh - (var(--bar)*2));
+}
+
+.stage{
   height:calc(100vh - (var(--bar)*2));
 }
 

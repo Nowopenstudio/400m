@@ -13,11 +13,17 @@ export default async function Home() {
    
     
 
-    <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*3)] pb-[200px]">
+  <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*3)] pb-[200px]">
     
   <div className="grid grid-cols-12 w-full">
-   <div className="col-start-4 col-span-6">
-     <h1>Contact</h1>
+   <div className="col-start-4 col-span-6 grid-cols-2 grid">
+     <div className="text-nav uppercase col-span-full mb-[20px]">Contact Form </div>
+     <form className="grid grid-cols-2 col-span-full gap-[20px]">
+      <input className="col-span-1 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Name"></input>
+      <input className="col-span-1 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Email"></input>
+      <input className="col-span-2 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Subject"></input>
+      <textarea className="border border-[--black] col-span-full rounded-[10px] p-[20px] min-h-[200px]" type="text" placeholder="Message"></textarea>
+     </form>
    </div>
   </div>
  </main>

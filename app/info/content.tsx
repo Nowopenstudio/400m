@@ -20,8 +20,8 @@ export default function Contents({content}:any) {
    
     
             <div className="fullWidth">
-                        <div className={`w-full fixed h-[var(--bar)] grid grid-cols-12 top-0 py-[8px] z-50 toggle-button ${sec==0?"":"toggle-right"}`}>
-                        <div className="relative z-0 bg-white h-full flex border border-black col-span-4 col-start-5 justify-between text-sm uppercase rounded-full items-center text-center">
+                        <div className={`text-nav w-full fixed h-[var(--bar)] grid grid-cols-12 top-0 py-[8px] z-50 toggle-button ${sec==0?"":"toggle-right"} pointer-events-auto`}>
+                        <div className="relative z-0 bg-white h-full flex border border-black col-span-4 col-start-5 justify-between uppercase rounded-full items-center text-center">
                         <div className="toggle-bar absolute h-full w-1/2 rounded-full bg-[var(--black)]"></div>
                         <div className={`relative toggle-opt w-[50%] ${sec==0?"text-[--white]":"text-[--black]"}`} onClick={() => setSec(0)}>Manifesto</div>
                         <div className={`relative toggle-opt w-[50%] text-[${sec==1?"--white":"--black"}]`} onClick={() => setSec(1)}>Principle</div>
