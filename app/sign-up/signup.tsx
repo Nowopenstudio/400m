@@ -6,7 +6,8 @@ import Prelim from "./forms/prelim";
 import StageOne from "./forms/stageOne";
 import StageTwo from "./forms/stageTwo";
 
-export const InputContext = createContext()
+
+export const InputContext = createContext({})
 
 
 
@@ -25,7 +26,7 @@ export default function SignUp({form,sec}:any) {
 
     const step=(sec:any)=>{
         const curr = currPage + sec
-        const currAnswers = answers
+        const currAnswers:any = answers
         currAnswers[`quest${currPage}`] = active;
         setAnswer(currAnswers)
         setPage(curr)
