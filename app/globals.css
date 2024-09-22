@@ -117,3 +117,16 @@ p, ul, ol{
   left: 50%;
 }
 
+
+
+/* cta */
+.formBut {
+  background-color: #ffffff;
+  color: var(--black);
+  transition: all .25s ease-in-out;
+}
+
+.active{
+  background-color: #000000;
+  color: var(--white);
+}

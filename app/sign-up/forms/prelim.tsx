@@ -1,7 +1,10 @@
 
-import React, { useEffect, useState } from "react";
+'use client'
+ 
+import React, { useEffect, useState, useContext } from "react";
 import { Reveal } from "@/app/lib/util/reveal";
 import { PortableText } from "next-sanity";
+import {InputContext} from '../signup'
 import Link from "next/link";
 
 
@@ -9,7 +12,23 @@ import Link from "next/link";
 
 
 export default function Prelim({form}:any) {
-    console.log('prolim', form)
+  const contextInput = useContext(InputContext);
+  const [pre, setPre]  = useState(contextInput.answers.quest0 || {})
+
+  const toggle = (e)=>{
+    const curr = e.currentTarget.getAttribute('data-prelim')
+    const preSet = pre
+    if(preSet[`toggle${curr}`]){
+    preSet[`toggle${curr}`] = false
+    e.currentTarget.classList.remove('active')
+  }else{
+    preSet[`toggle${curr}`] = true
+    e.currentTarget.classList.add('active')
+  }
+    contextInput.activeChange(preSet)
+    setPre(preSet)
+  }
+
 
   return (
             <Reveal styleSet="w-full grid grid-cols-12">      
@@ -24,7 +43,7 @@ export default function Prelim({form}:any) {
              <div className="col-start-3 col-span-8 grid grid-cols-2 gap-[20px]">
               {form.single.map((item:any,i:any)=>{
                 return(
-                  <div  key={`prelim-${i}`} className="uppercase py-[10px] px-[10px] col-span-1 border border-[--black] rounded-full text-nav">
+                  <div  onClick={(e)=> toggle(e)} key={`prelim-${i}`} data-prelim={i} className={`formBut uppercase py-[10px] px-[10px] col-span-1 border border-[--black] rounded-full text-nav ${pre['toggle'+i]?"active":""}`}>
                     <PortableText value={item.content}/>
                   </div>
                 )

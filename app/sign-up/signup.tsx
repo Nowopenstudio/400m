@@ -1,41 +1,91 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import { Reveal } from "../lib/util/reveal";
 import Prelim from "./forms/prelim";
 import StageOne from "./forms/stageOne";
 import StageTwo from "./forms/stageTwo";
 
+export const InputContext = createContext()
+
 
 
 export default function SignUp({form,sec}:any) {
     console.log(form)
-    const [page, setPage] = useState(0)
-    const [profile,setPro] = useState({})
+    const [currPage, setPage] = useState(0)
+    const [total, setTotal] = useState(0)
+    const [answers,setAnswer] = useState<object>({})
+    const [active,setActive] = useState(null)
+    const [submit, setSubmit] = useState(false)
 
-    const step =(sec:any)=>{
-       const curr = page + sec
-       setPage(curr)
-    
-      }
+ 
+    const activeChange =(answer:any)=>{
+        setActive(answer)
+    }
+
+    const step=(sec:any)=>{
+        const curr = currPage + sec
+        const currAnswers = answers
+        currAnswers[`quest${currPage}`] = active;
+        setAnswer(currAnswers)
+        setPage(curr)
+        setActive(null)
+        console.log('answers',currAnswers)
+    }
+
+    useEffect(()=>{
+        const count = 1+(form[0].section[1].single.length)+(form[0].section[2].single.length)
+        console.log(count, "count")
+        setTotal(count)
+    }, [])
+
+    const submitToggle=()=>{
+        setSubmit(!submit)
+    }
+
   return (
    
     
     <div className="pt-[60px]">
-                {page===0?(<Prelim form={form[0].section[0]}/>):('')}
-                {page===1?(<StageOne form={form[0].section[1]}/>):('')}
-                {page===2?(<StageTwo form={form[0].section[2]}/>):('')}
-
+            
         <div className=" w-full grid-cols-12 grid mt-[20px]">
-           <div className={`col-span-4 col-start-5 text-center text-nav uppercase grid grid-cols-[2fr_1fr_2fr]`}>
-                {page==2?(
-                     <div className={`py-[10px] bg-[--black] text-white uppercase relative col-span-full border border-black text-nav text-center rounded-full mb-[20px]`}>{`Submit Application`}</div>
-                ):('')}
-                <div onClick={() => step(-1)} className={`py-[10px] bg-gray-100 rounded-full ${page > 0?"":"opacity-0 pointer-events-none"}`}>Back</div>
-                <div  className="py-[10px] rounded-full px-[20px]">{`${page+1}/${form[0].section.length}`}</div>
-                <div onClick={() => step(1)} className={`py-[10px] bg-gray-100 rounded-full ${page+1 < form[0].section.length?"":"opacity-0 pointer-events-none"}`}>Next</div>
+                        {submit?(
+                              <InputContext.Provider value={{ activeChange, currPage, answers, submitToggle }}>
+                        <StageTwo /></InputContext.Provider>
+                        ):('')}
+                      
+              
+                   <div className="col-span-full pb-[60px]">
+                        {currPage < 1?(
+                            <InputContext.Provider value={{ activeChange, currPage, answers }}>
+                              <Prelim form={form[0].section[0]}/></InputContext.Provider>
+                        ):(
+                            currPage < (form[0].section[1].single.length+1)?(
+                                <InputContext.Provider value={{ activeChange, currPage, answers }}>
+                                <StageOne single={form[0].section[1].single[currPage - 1]}/>  </InputContext.Provider>
+                          ):(
+                            <InputContext.Provider value={{ activeChange, currPage, answers }}>
+                            <StageOne single={form[0].section[2].single[currPage - (1+form[0].section[1].single.length)]}/>    </InputContext.Provider>
+                          )
     
-            </div>
+                        )}
+                
+                    </div>
+          
+           <div className={`w-full grid grid-cols-12 absolute bottom-[var(--bar)] py-[10px]`}>
+                {currPage === total-1?(
+                    <div className="col-span-4 col-start-5 mb-[10px]">
+                        <div onClick={()=>submitToggle()} className={` text-white uppercase text-center text-nav  py-[10px] bg-[var(--black)] rounded-full ${currPage == total-1?"":"opacity-0 pointer-events-none"}`}>Submit Application</div>
+                    </div>
+                ):('')}
+               <div className={`col-span-4 col-start-5 text-center text-nav uppercase grid grid-cols-[1fr_1fr_1fr]`}>
+                   
+                    <div onClick={() => step(-1)} className={`py-[10px] bg-gray-100 rounded-full ${currPage > 0?"":"opacity-0 pointer-events-none"}`}>Back</div>
+                    <div  className="py-[10px] rounded-full px-[20px]">{`${currPage+1}/${total}`}</div>
+                    <div onClick={() => step(1)} className={`py-[10px] bg-gray-100 rounded-full ${(currPage+1 < total)?"":"opacity-0 pointer-events-none"} ${active?"":"opacity-50"}`}>Next</div>
+        
+                </div>
+           </div>
         </div>
     </div>
 
