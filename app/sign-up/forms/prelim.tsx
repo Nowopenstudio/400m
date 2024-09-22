@@ -12,7 +12,7 @@ import Link from "next/link";
 
 
 export default function Prelim({form}:any) {
-  const contextInput = useContext(InputContext);
+  const contextInput = useContext<any>(InputContext);
   const [pre, setPre]  = useState(contextInput.answers.quest0 || {})
 
   const toggle = (e)=>{
