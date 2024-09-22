@@ -10,7 +10,7 @@ import Link from "next/link";
 
 
 export default function StageOne({single}:any) {
-  const contextInput = useContext(InputContext);
+  const contextInput = useContext<any>(InputContext);
   console.log('single', single)
 
   

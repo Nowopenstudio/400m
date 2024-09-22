@@ -10,7 +10,7 @@ import Link from "next/link";
 
 
 export default function StageTwo() {
-  const contextInput = useContext(InputContext);
+  const contextInput = useContext<any>(InputContext);
 
 
   

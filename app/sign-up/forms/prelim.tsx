@@ -15,7 +15,7 @@ export default function Prelim({form}:any) {
   const contextInput = useContext<any>(InputContext);
   const [pre, setPre]  = useState(contextInput.answers.quest0 || {})
 
-  const toggle = (e)=>{
+  const toggle = (e:any)=>{
     const curr = e.currentTarget.getAttribute('data-prelim')
     const preSet = pre
     if(preSet[`toggle${curr}`]){
