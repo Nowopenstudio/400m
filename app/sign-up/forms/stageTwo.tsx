@@ -26,7 +26,7 @@ export default function StageTwo() {
                   <input type="text" name="lastName" className="px-[20px] rounded-full col-span-1 border border-[--black] text-nav p-[10px] uppercase" placeholder="Last name" required></input>
                   <input type="email" name="email" className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase" placeholder="email" required></input>
                   <input type="url" name="website" className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase" placeholder="Website"></input>
-                  <button type="url" name="website" className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase text-center bg-[--black] text-white"> Submit </button>
+                  <button className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase text-center bg-[--black] text-white"> Submit </button>
               </form>
               <div onClick={()=> contextInput.submitToggle()} className="col-span-3 col-start-10 grid grid-cols-1 items-center text-nav uppercase text-center">Back</div>
                  
