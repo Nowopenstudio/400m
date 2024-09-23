@@ -1,3 +1,4 @@
+
 import {createClient, QueryParams} from 'next-sanity'
 import {apiVersion, dataset, projectId, token} from "../../../env"
 import imageUrlBuilder from '@sanity/image-url'
@@ -40,3 +41,18 @@ export const scrolltoHash = (element_id: string)=>{
     const element = document.getElementById(element_id)
     element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
   }
+
+  export default async function addDoc(doc) {
+    
+    const postDoc = await client.create(doc).then(res => {return res})
+    }
+
+    export const delData = (async (query:any) =>{
+   
+        const initQuery = query
+        const delContent = await client.delete({
+            query: `*[_type == "${query}"]`
+          })
+      })
+
+   

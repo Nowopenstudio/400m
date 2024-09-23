@@ -11,12 +11,11 @@ import Link from "next/link";
 
 export default function StageOne({single}:any) {
   const contextInput = useContext<any>(InputContext);
-  console.log('single', single)
 
   
   useEffect(()=>{
-    if(contextInput.answers[`quest${contextInput.currPage}`]){
-      contextInput.activeChange(contextInput.answers[`quest${contextInput.currPage}`])
+    if(contextInput.answers[contextInput.currPage]){
+      contextInput.activeChange(contextInput.answers[contextInput.currPage])
     }
   },[contextInput.currPage])
 
@@ -28,7 +27,7 @@ export default function StageOne({single}:any) {
            
                   <div  className=" py-[10px] col-span-2 mb-[60px]">
                     <PortableText value={single.content}/>
-                    <textarea onChange={(e)=> contextInput.activeChange(e.target.value) } className="mt-[20px] border border-[--black] w-full rounded-[10px] p-[20px] min-h-[150px]" placeholder="..." defaultValue={contextInput.answers[`quest${contextInput.currPage}`]?(contextInput.answers[`quest${contextInput.currPage}`]):""}></textarea>
+                    <textarea onChange={(e)=> contextInput.activeChange(e.target.value) } className="mt-[20px] border border-[--black] w-full rounded-[10px] p-[20px] min-h-[150px]" placeholder="..." defaultValue={contextInput.answers[contextInput.currPage]?(contextInput.answers[contextInput.currPage]):""}></textarea>
                   </div>
                
              </div>

@@ -15,7 +15,7 @@ export default async function Home() {
    
     
 
-    <main className="w-[vw] min-h-[100vh] pb-[200px] pt-[calc(var(--bar)*2)] overflow-hidden">
+    <main className="w-[100vw] min-h-[100vh] pb-[200px] pt-[calc(var(--bar)*2)] overflow-hidden relative">
             <Content prod={prod} form={form} preface={preface[0]}/>
             </main>
        
