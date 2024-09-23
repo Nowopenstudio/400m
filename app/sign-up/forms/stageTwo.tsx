@@ -28,7 +28,7 @@ export default function StageTwo() {
    newDoc.email = formData.get('email')
    newDoc.website = formData.get('website')
   
-   contextInput.answers.map((item,i)=>{
+   contextInput.answers.map((item:any,i:number)=>{
     const curr: any = {}
     curr.quest = i
     curr.answer = JSON.stringify(item)

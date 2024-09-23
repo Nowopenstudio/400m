@@ -5,7 +5,6 @@ import { Reveal } from "../lib/util/reveal";
 import Prelim from "./forms/prelim";
 import StageOne from "./forms/stageOne";
 import StageTwo from "./forms/stageTwo";
-import { sendEmail } from "../api/send/route";
 
 
 export const InputContext = createContext({})
@@ -47,7 +46,7 @@ export default function SignUp({form,sec}:any) {
         setSubmit(!submit)
     }
 
-    const sendSuccess = (newDoc)=>{
+    const sendSuccess = (newDoc:any)=>{
         console.log(newDoc)
         setSuccess(true)
     }

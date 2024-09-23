@@ -42,7 +42,7 @@ export const scrolltoHash = (element_id: string)=>{
     element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
   }
 
-  export default async function addDoc(doc) {
+  export default async function addDoc(doc:any) {
     
     const postDoc = await client.create(doc).then(res => {return res})
     }
