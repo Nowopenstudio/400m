@@ -24,7 +24,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [plugin(({ addUtilities }) => {
+  plugins: [plugin(({ addUtilities }:any) => {
     addUtilities({
       ".x-center": { left: "50%", transform: "translateX(-50%)" },
       ".y-center": { top: "50%", transform: "translateY(-50%)" },
