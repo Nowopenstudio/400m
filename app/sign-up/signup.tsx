@@ -57,7 +57,7 @@ export default function SignUp({form,sec,contact}:any) {
   return (
    
     
-    <div className="pt-[60px] col-span-full">
+    <div className=" pt-[20px] md:pt-[60px] col-span-full">
         {success?(
            <Reveal styleSet=" w-full grid-cols-12 grid mt-[20px] items-center h-[100%]">
 
