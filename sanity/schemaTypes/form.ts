@@ -52,6 +52,27 @@ export default{
             ]
         }]
 
+     },{
+        type:'array',
+        name:'appSuccess',
+        title: "Successful Application Note",
+        of:[{type:'block'}]
+     },
+     {
+        type:'string',
+        name:'emailSub',
+        title: "Application Email Subject",
+     },
+     {
+        type:'text',
+        name:'emailer',
+        title: "Application Email Message",
+     },
+     {
+        type:'array',
+        name:'contactSuccess',
+        title: "Successful Email Note",
+        of:[{type:'block'}]
      }
     ]
 }

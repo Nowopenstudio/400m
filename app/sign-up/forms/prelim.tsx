@@ -34,13 +34,13 @@ export default function Prelim({form}:any) {
             <Reveal styleSet="w-full grid grid-cols-12">      
            
                  {form.intro?(
-                   <div className="col-start-4 col-span-6 mb-[60px]">
+                   <div className="col-start-2 col-span-10  sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 mb-[100px] md:mb-[60px]">
                   <PortableText value={form.intro}/>
                   <Link href="/contact"><div className={`px-[20px] py-[10px] bg-gray-100 rounded-full uppercase text-nav mt-[20px]`}>Contact Form</div></Link>
                   </div>
                  ):('')}
              
-             <div className="col-start-3 col-span-8 grid grid-cols-2 gap-[20px]">
+             <div className="col-start-2 col-span-10 md:col-start-3 md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-[20px]">
               {form.single.map((item:any,i:any)=>{
                 return(
                   <div  onClick={(e)=> toggle(e)} key={`prelim-${i}`} data-prelim={i} className={`formBut uppercase py-[10px] px-[10px] col-span-1 border border-[--black] rounded-full text-nav ${pre['toggle'+i]?"active":""}`}>

@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "email": "email dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-email/components": "^0.0.25",
     "@sanity/orderable-document-list": "^1.2.1",
     "framer-motion": "^11.5.4",
     "maath": "^0.10.8",
@@ -27,6 +29,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.9",
     "postcss": "^8",
+    "react-email": "3.0.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },

@@ -1,4 +1,4 @@
-import { EmailTemplate } from '@/app/lib/util/EmailTemplate';
+import { ContactTemplate } from '@/app/lib/util/ContactTemplate';
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from 'resend';
 
@@ -13,7 +13,7 @@ export async function POST(req: NextRequest, res:NextResponse) {
       from: 'ro@nowopen.studio',
       to: email,
       subject: subject,
-      react: EmailTemplate({ firstName: name, message:message }),
+      react: ContactTemplate({ firstName: name, message:message, email:email }),
     });
 
     if (error) {

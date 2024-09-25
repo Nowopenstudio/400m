@@ -1,9 +1,7 @@
 
 import React, { useEffect, useState, useContext, FormEvent } from "react";
 import { Reveal } from "@/app/lib/util/reveal";
-import { PortableText } from "next-sanity";
 import {InputContext} from '../signup'
-import Link from "next/link";
 import addDoc, { delData } from "@/app/lib/util/sanity";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -49,15 +47,15 @@ export default function StageTwo() {
             <Reveal  styleSet={`${isLoading?"opacity-[.25] pointer-events-none":""} w-[100vw] h-[100vh] grid grid-cols-12 fixed top-0 left-0 z-50 py-[var(--bar)]`} >      
              
          
-              <div onClick={()=> contextInput.submitToggle()} className={`${isLoading?"opacity-[.25] pointer-events-none":""} col-span-3 col-start-1 grid grid-cols-1 items-center text-nav uppercase text-center`}>Back</div>
-                <form onSubmit={submitForm}className={` px-[20px] bg-white col-start-4 col-span-6 grid grid-cols-2 gap-[20px] border-[--black] border`}>
+              <div onClick={()=> contextInput.submitToggle()} className={`${isLoading?"opacity-[.25] pointer-events-none":""} col-span-12 xl:col-span-3 col-start-1 grid grid-cols-1 items-center text-nav uppercase text-center bg-white xl:bg-none mt-[--bar]`}>Back</div>
+                <form onSubmit={submitForm}className={` px-[20px] bg-white col-start-1 col-span-12 md:col-start-3 md:col-span-8 md:grid-cols-2 xl:col-start-4 xl:col-span-6 grid grid-cols-2 gap-[20px] border-0 xl:border-[--black] xl:border`}>
                     <input type="text" name="firstName" className="px-[20px] rounded-full col-span-1 border border-[--black] text-nav p-[10px] uppercase" placeholder="First name" required></input>
                     <input type="text" name="lastName" className="px-[20px] rounded-full col-span-1 border border-[--black] text-nav p-[10px] uppercase" placeholder="Last name" required></input>
                     <input type="email" name="email" className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase" placeholder="email" required></input>
                     <input type="url" name="website" className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase" placeholder="Website"></input>
-                    <button type="submit"className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase text-center bg-[--black] text-white"> Submit </button>
+                    <button type="submit"className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase text-center bg-[--black] text-white "> Submit </button>
                 </form>
-                <div onClick={()=> contextInput.submitToggle()} className={`${isLoading?"opacity-[.25] pointer-events-none":""} col-span-3 col-start-10 grid grid-cols-1 items-center text-nav uppercase text-center`}>Back</div>
+                <div onClick={()=> contextInput.submitToggle()} className={`${isLoading?"opacity-[.25] pointer-events-none":""} col-span-12 xl:col-span-3 col-start-1 xl:col-start-10  grid-cols-1 items-center text-nav uppercase text-center text-white xl:text-black grid bg-white xl:bg-transparent`}>Back</div>
           
                  
             </Reveal>

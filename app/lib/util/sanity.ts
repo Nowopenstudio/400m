@@ -42,17 +42,79 @@ export const scrolltoHash = (element_id: string)=>{
     element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
   }
 
-  export default async function addDoc(doc:any) {
-    
-    const postDoc = await client.create(doc).then(res => {return res})
+export default async function addDoc(doc:any) {
+
+const postDoc = await client.create(doc).then(res => {return res})
+}
+
+export const delData = (async (query:any) =>{
+
+    const initQuery = query
+    const delContent = await client.delete({
+        query: `*[_type == "${query}"]`
+        })
+    })
+
+
+
+export const sendEmail= (async (profile:any,form:any,contact:any)=>{
+    console.log("step1",profile)
+    try{
+        const response = await fetch("/api/send", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: profile.email,
+            name: profile.firstName,
+            subject:form.emailSub,
+            message:form.emailer,
+            sender:'ro@nowopen.studio'
+          }),
+        });
+  
+        // handle success
+        if (response.ok) {
+        console.log('great')
+        } else {
+         console.log(response)
+        }
     }
+     catch (error) {
+      console.log("Error sending email:", error);
+      
+    }
+      
+})
 
-    export const delData = (async (query:any) =>{
-   
-        const initQuery = query
-        const delContent = await client.delete({
-            query: `*[_type == "${query}"]`
-          })
-      })
+export const sendContact= (async (message:any)=>{
+  try{
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: message.email,
+          name: message.name,
+          subject:message.subject,
+          message:message.message,
+          sender:message.contact
+        }),
+      });
 
+      // handle success
+      if (response.ok) {
+      console.log('great')
+      } else {
+       console.log(response)
+      }
+  }
+   catch (error) {
+    console.log("Error sending email:", error);
+    
+  }
+    
+})
    

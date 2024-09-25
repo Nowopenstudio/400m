@@ -18,9 +18,7 @@ export default{
             title:"info",
             fields:[
                 {name:"name",type:"string", title:"Name"},
-                {name:"email",type:"url", title:"Email",validation: Rule => Rule.uri({
-                    scheme: ['http', 'https', 'mailto', 'tel']
-                  })},
+                {name:"email",type:"string", title:"Email"}
             ]
         }]
 

@@ -5,19 +5,22 @@ import { Reveal } from "../lib/util/reveal";
 import Prelim from "./forms/prelim";
 import StageOne from "./forms/stageOne";
 import StageTwo from "./forms/stageTwo";
+import { sendEmail } from "../lib/util/sanity";
+import { PortableText } from "next-sanity";
 
 
 export const InputContext = createContext({})
 
 
 
-export default function SignUp({form,sec}:any) {
+export default function SignUp({form,sec,contact}:any) {
     const [currPage, setPage] = useState(0)
     const [total, setTotal] = useState(0)
     const [answers,setAnswer] = useState<object>([])
     const [active,setActive] = useState(null)
     const [submit, setSubmit] = useState(false)
     const [success, setSuccess] = useState(false)
+
 
  
     const activeChange =(answer:any)=>{
@@ -47,19 +50,19 @@ export default function SignUp({form,sec}:any) {
     }
 
     const sendSuccess = (newDoc:any)=>{
-        console.log(newDoc)
+        sendEmail(newDoc, form[0], contact)
         setSuccess(true)
     }
 
   return (
    
     
-    <div className="pt-[60px] min-h-[100%]">
+    <div className="pt-[60px] col-span-full">
         {success?(
-           <div className=" w-full grid-cols-12 grid mt-[20px] items-center h-[100%]">
+           <Reveal styleSet=" w-full grid-cols-12 grid mt-[20px] items-center h-[100%]">
 
-                <h1 className="col-span-full text-center text-nav">thank you</h1>
-           </div>
+                <div className="col-start-2 col-span-10 px-[20px] sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6"><PortableText value={form[0].appSuccess}/></div>
+           </Reveal>
         ):(
             <div className=" w-full grid-cols-12 grid mt-[20px]">
             {submit?(
@@ -85,13 +88,13 @@ export default function SignUp({form,sec}:any) {
     
         </div>
 
-<div className={`w-full grid grid-cols-12 absolute bottom-[var(--bar)] py-[10px]`}>
+<div className={`w-full grid grid-cols-12 fixed bottom-[var(--bar)] py-[10px] px-[10px] md:px-0`}>
     {currPage === total-1?(
-        <div className="col-span-4 col-start-5 mb-[10px]">
+        <div className="col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5 mb-[10px]">
             <div onClick={()=>submitToggle()} className={` text-white uppercase text-center text-nav  py-[10px] bg-[var(--black)] rounded-full ${currPage == total-1?"":"opacity-0 pointer-events-none"}`}>Submit Application</div>
         </div>
     ):('')}
-   <div className={`col-span-4 col-start-5 text-center text-nav uppercase grid grid-cols-[1fr_1fr_1fr]`}>
+   <div className={`col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5 text-center text-nav uppercase grid grid-cols-[1fr_1fr_1fr]`}>
        
         <div onClick={() => step(-1)} className={`py-[10px] bg-gray-100 rounded-full ${currPage > 0?"":"opacity-0 pointer-events-none"}`}>Back</div>
         <div  className="py-[10px] rounded-full px-[20px]">{`${currPage+1}/${total}`}</div>

@@ -38,16 +38,19 @@ h1{
   font-size:18pt;
   font-weight: bold;
   line-height: .875em;
+  margin-bottom: 20px;
 }
 
 h2{
   font-family: 'sans-ex', 'helvetica','arial'; 
   font-size:10pt;
   line-height: .875em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 p, ul, ol{
-  font-size: 1.25em;
+  font-size: 1.15em;
 }
 
 
@@ -59,7 +62,7 @@ p, ul, ol{
 .text-nav{
   font-family: 'sans-ex', 'helvetica','arial'; 
   font-size:7pt;
-  letter-spacing: 1em;
+  letter-spacing: 4px;
 }
 
 
@@ -129,4 +132,12 @@ p, ul, ol{
 .active{
   background-color: #000000;
   color: var(--white);
+}
+
+
+@media (max-width: 900px) {
+  h1{font-size:1rem}
+  p, ul, ol, li{font-size: 1em}
+  .text-nav{letter-spacing: 3px;}
+
 }
