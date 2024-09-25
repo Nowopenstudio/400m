@@ -16,7 +16,7 @@ export default async function Home() {
    
     
 
-  <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*3)] pb-[200px] grid items-center">
+  <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*3)] md:pb-[200px] grid items-center">
     <Form form={form[0]} settings={settings[0]} />
   </main>
  

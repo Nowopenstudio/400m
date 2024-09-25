@@ -18,7 +18,7 @@ export default async function Home() {
    
     
 
-    <main className="grid grid-cols-12 items-center w-[100vw] min-h-[100vh] pb-[200px] pt-[calc(var(--bar)*2)] overflow-hidden relative">
+    <main className="grid grid-cols-12 items-center w-[100vw] min-h-[100vh] pb-[40px] md:pb-[200px] pt-[calc(var(--bar)*2)] overflow-hidden relative">
       <Content prod={prod} form={form} preface={preface[0]} settings={settings[0]} design={design}/>
     </main>
 

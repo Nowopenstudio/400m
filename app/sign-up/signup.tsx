@@ -98,7 +98,7 @@ export default function SignUp({form,sec,contact}:any) {
        
         <div onClick={() => step(-1)} className={`py-[10px] bg-gray-100 rounded-full ${currPage > 0?"":"opacity-0 pointer-events-none"}`}>Back</div>
         <div  className="py-[10px] rounded-full px-[20px]">{`${currPage+1}/${total}`}</div>
-        <div onClick={() => step(1)} className={`py-[10px] bg-gray-100 rounded-full ${(currPage+1 < total)?"":"opacity-0 pointer-events-none"} ${active?"":"opacity-50"}`}>Next</div>
+        <div onClick={() => step(1)} className={`py-[10px] bg-gray-100 rounded-full ${(currPage+1 < total)?"":"opacity-0 pointer-events-none"} ${active?"":"opacity-50 pointer-events-none"}`}>Next</div>
 
     </div>
 </div>
