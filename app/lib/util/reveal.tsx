@@ -32,7 +32,7 @@ export function Reveal({children, styleSet, count}:any){
    },[isInView])
    return(
       
-            <motion.div ref={ref} style={{overflow:"hidden"}} className={`${styleSet}`}
+            <motion.div ref={ref}  className={`${styleSet}`}
                 variants={{
                     hidden:{opacity:0},
                     visible:{opacity:1}

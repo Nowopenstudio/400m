@@ -51,8 +51,32 @@ h2{
 
 p, ul, ol{
   font-size: 1.15em;
+  margin-bottom: 1rem;
 }
 
+.formBut p{
+  font-size: 1.15em;
+  margin-bottom: 0;
+}
+
+
+li{
+  margin: 20px 0;
+  position: relative;
+}
+
+li::before{
+  content: "";
+  position:absolute;
+  width:100px;
+  border: 1px solid var(--black);
+  transform: translate(-110%, 15px);
+}
+
+textarea:focus, textarea:active{
+  border-color: #4F8193;
+  color: #4F8193;
+}
 
 
 .text-sm, .text-sm p{
@@ -64,6 +88,8 @@ p, ul, ol{
   font-size:7pt;
   letter-spacing: 4px;
 }
+
+
 
 
 /* NAV */

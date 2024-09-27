@@ -6,11 +6,12 @@ export default async function Home() {
     'settings':*[_type=="settings"]{contacts},
     'preface':*[_type=="info" && slug.current=="preface"]{title,content},
     'form':*[_type=="form"]{section,appSuccess, emailSub, emailer },
-    'prod':*[_type=="project" && ( dept->slug.current == "production")]{"logoUrl":logo.asset->url,title,desc, slug,"images":content[]{desc,"imageUrl":image.asset->url}},
+    'prod':*[_type=="project" && ( dept->slug.current == "productions")]{"logoUrl":logo.asset->url,title,desc, slug,"images":content[]{desc,"imageUrl":image.asset->url}},
     'design':*[_type=="project" && ( dept->slug.current == "d-d")]{"logoUrl":logo.asset->url,title,desc, slug,"images":content[]{desc,"imageUrl":image.asset->url}}
     }`)
 
   const {preface, form, prod, settings, design} = query.data
+
 
 
 
