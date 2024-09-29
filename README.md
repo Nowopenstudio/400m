@@ -1,5 +1,5 @@
 ## Introduction
-An extension of the 400m website, focused on memeber applications and supportive organization info.
+An extension of the 400m website, focused on membership information, member application, and brief portfolio of onging work.
 
 ## Packages
 Next.js
