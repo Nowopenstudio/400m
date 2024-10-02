@@ -42,6 +42,14 @@ export const scrolltoHash = (element_id: string)=>{
     element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
   }
 
+  export const scrollToPos = (posY: number)=>{
+    window.scrollTo({
+      top: posY,
+      left: 100,
+      behavior: "smooth",
+    });
+  }
+
 export default async function addDoc(doc:any) {
 
 const postDoc = await client.create(doc).then(res => {return res})

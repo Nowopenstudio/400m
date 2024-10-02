@@ -73,7 +73,7 @@ li::before{
   transform: translate(-110%, 15px);
 }
 
-textarea:focus, textarea:active{
+textarea:focus, textarea:{
   border-color: #4F8193;
   color: #4F8193;
 }
@@ -87,6 +87,10 @@ textarea:focus, textarea:active{
   font-family: 'sans-ex', 'helvetica','arial'; 
   font-size:7pt;
   letter-spacing: 4px;
+}
+
+.nav-item.selected .nav-des{
+ color:white
 }
 
 
