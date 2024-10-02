@@ -73,7 +73,7 @@ li::before{
   transform: translate(-110%, 15px);
 }
 
-textarea:focus, textarea:{
+textarea:focus{
   border-color: #4F8193;
   color: #4F8193;
 }
