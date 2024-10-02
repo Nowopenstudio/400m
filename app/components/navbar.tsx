@@ -8,7 +8,11 @@ import { Logo, Members, Contact } from './svg/400m';
 
 
 
+
 export default function Navbar({phase, setPhase}:any){
+
+
+
     
     return(
         <div className={` uppercase w-[100vw] h-[100vh] fixed z-50 pointer-events-none overflow-hidden phase-${phase}`}>
