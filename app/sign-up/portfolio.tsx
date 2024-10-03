@@ -33,7 +33,7 @@ useEffect(()=>{
             <div className="buffHold w-3/4 sm:w-1/2 xl:w-1/4 opacity-0 pointer-events-none relative">
                 <div className="projHold p-[10px] grid grid-cols-[1fr_5fr] items-center">
                     <Image alt="image" height={0}  width={0} sizes="100vw"  src={work[0].logoUrl}  className="w-full object-fill "/>
-                    <div className="py-[10px] pl-[10px] text-sm">
+                    <div className="pt-[10px] pl-[10px] text-sm">
                     <h2 className="mb-[10px]">{work[0].title}</h2>
                     <PortableText value={work[0].desc}/>
                     </div>
@@ -47,7 +47,7 @@ useEffect(()=>{
                    <Reveal count={i} styleSet="relative overflow-hidden w-[75vw] sm:w-[50vw] xl:w-[25vw] border border-black" key={`orgs-${i}`}>
                     <div className="projHold p-[10px] grid grid-cols-[1fr_5fr] items-center">
                     <Image alt="image" height={0}  width={0} sizes="100vw"  src={item.logoUrl}  className="w-full object-fill "/>
-                    <div className="py-[10px] pl-[10px] text-sm">
+                    <div className="pt-[10px] pl-[10px] text-sm h-[80px]">
                       <h2 className="mb-[10px] uppercase">{item.title}</h2>
                       <PortableText value={item.desc}/>
                     </div>

@@ -25,6 +25,16 @@ export default{
         name:'cover',
         type:'image',
         title:'Cover'
+    },
+    {
+        name:'icon',
+        type:'image',
+        title:'Icon'
+    },
+    {
+        name:'placehold',
+        type:'image',
+        title:'Placehold'
     }
     ]
 }
