@@ -6,6 +6,7 @@ import Navbar from "./components/navbar";
 import {getData} from "./lib/util/sanity";
 import { useState,useEffect } from "react";
 import { usePathname } from 'next/navigation';
+import SmoothScrolling from "./components/SmoothScrolling";
 
 
 
@@ -32,12 +33,14 @@ export default function RootLayout({
         return (
     <html lang="en">
       <body>
+      <SmoothScrolling>
     <div className='relative w-full'>
         <Navbar phase={phase} setPhase={setPhase}/>
   
           
         </div>
         {children}
+        </SmoothScrolling>
           </body>
     </html>
   );

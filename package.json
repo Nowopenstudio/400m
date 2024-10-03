@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-email/components": "^0.0.25",
     "@sanity/orderable-document-list": "^1.2.1",
+    "@studio-freight/react-lenis": "^0.0.47",
     "framer-motion": "^11.5.4",
     "maath": "^0.10.8",
     "next": "14.2.9",
