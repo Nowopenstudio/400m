@@ -1,6 +1,5 @@
 import { getData } from "../lib/util/sanity";
 import { PortableText } from "next-sanity";
-import Contents from "./content";
 
 
 export default async function Home() {
@@ -16,7 +15,7 @@ export default async function Home() {
     
 
         <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*2)] pb-[200px]">
-            <Contents content={about}/>
+            {/* <Contents content={about}/> */}
          </main>
  
     

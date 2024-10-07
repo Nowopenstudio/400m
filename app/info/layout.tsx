@@ -1,18 +1,18 @@
 'use client'
 
-import { animate, useMotionValue, motion } from "framer-motion";
 
-import Image from "next/image";
-import useMeasure from "react-use-measure";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Reveal } from "../lib/util/reveal";
-import { PortableText } from "next-sanity";
-import Manifesto from "./manifesto";
-import Principles from "./principles";
+import Link from "next/link";
 import { scrollToPos } from "../lib/util/sanity";
 
 
-export default function Contents({content}:any) {
+export default function RootLayout({
+    children
+  }: Readonly<{
+    children: React.ReactNode;
+  }>) {
+    const pageID = usePathname();
     const [sec, setSec] = useState(0)
   
     const toggleSec =(sec:any)=>{
@@ -20,27 +20,42 @@ export default function Contents({content}:any) {
        scrollToPos(0);
     
       }
+
+      useEffect(()=>{
+        if(pageID.includes('manifesto')){
+          setSec(0)
+        }else if(pageID.includes('principles')){
+          setSec(1)
+        }
+    }, [pageID])
+
   
   return (
    
-    
-            <div className="fullWidth">
+    <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*2)] pb-[200px]">
+         <div className="fullWidth">
                         <div className={`grid-cols-10 text-nav w-full fixed h-[var(--bar)] grid xs:grid-cols-12 top-0 py-[8px] z-50 toggle-button ${sec==0?"":"toggle-right"} pointer-events-auto px-[10px] md:pr-[0]`}>
                             <div className=" relative z-0 bg-white h-full flex border border-black col-span-11 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5 justify-between uppercase rounded-full items-center text-center">
                                 <div className="toggle-bar absolute h-full w-1/2 rounded-full bg-[var(--black)]"></div>
-                                <div className={`pt-[2px] relative toggle-opt w-[50%] ${sec==0?"text-[--white]":"text-[--black]"}`} onClick={() => toggleSec(0)}>Manifesto</div>
-                                <div className={`pt-[2px] relative toggle-opt w-[50%] text-[${sec==1?"--white":"--black"}]`} onClick={() => toggleSec(1)}>Principles</div>
+                                <Link href="/info/manifesto" className={`pt-[2px] relative toggle-opt w-[50%] ${sec==0?"text-[--white]":"text-[--black]"}`} onClick={() => toggleSec(0)}>Manifesto</Link>
+                                <Link href="/info/principles" className={`pt-[2px] relative toggle-opt w-[50%] text-[${sec==1?"--white":"--black"}]`} onClick={() => toggleSec(1)}>Principles</Link>
             
                             </div>
                         </div>
+
+                     
                     <div className="grid grid-cols-12 w-full">
-                        {sec==0?(
+                        {/* {sec==0?(
                             <Manifesto content={content.manifesto[0].content}/>
                         ):(
                             <Principles content={content.principles[0].content}/>
-                        )}
+                        )} */}
+                        {children}
                     </div>
             </div>
+          
+    </main>
+           
   
 
 

@@ -27,8 +27,10 @@ export default function RootLayout({
       setPhase(2)
     }else if(pageID.includes('contact')){
       setPhase(3)
+    }else{
+      setPhase(0)
     }
-}, [])
+}, [pageID])
 
         return (
     <html lang="en">
