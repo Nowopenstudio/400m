@@ -13,7 +13,7 @@ export const InputContext = createContext({})
 
 
 
-export default function SignUp({form,sec,contact}:any) {
+export default function SignUp({form, contact}:any) {
     const [currPage, setPage] = useState(0)
     const [total, setTotal] = useState(0)
     const [answers,setAnswer] = useState<object>([])
@@ -57,7 +57,7 @@ export default function SignUp({form,sec,contact}:any) {
   return (
    
     
-    <div className=" pt-[20px] md:pt-[60px] col-span-full">
+    <div className=" pt-[80px] md:pt-[100px] col-span-full min-h-[100vh]">
         {success?(
            <Reveal styleSet=" w-full grid-cols-12 grid mt-[20px] items-center h-[100%]">
 

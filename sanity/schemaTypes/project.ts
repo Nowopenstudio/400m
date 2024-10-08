@@ -14,6 +14,11 @@ export default{
         title:'Header'
     },
     {
+        name:'status',
+        type:'string',
+        title:'Status'
+    },
+    {
         name:'slug',
         type:'slug',
         title:'slug',
@@ -52,6 +57,32 @@ export default{
                     type:'array',
                     title:"Content",
                     of:[{type:"block"}]
+                }
+            ]
+        }]
+
+     },
+     {   name:'social',
+        type:'array',
+        title:'Social Links',
+        options:{sortable:true,layout:"tags"},
+        of:[{
+            name:"section",
+            type: "object",
+            title:'Section',
+            fields:[
+                {
+                    name:"name",
+                    type:'string',
+                    title:"Name"
+                },
+                {
+                    name:"url",
+                    type:'url',
+                    title:"URL",
+                    validation: Rule => Rule.uri({
+                        scheme: ['http', 'https', 'mailto', 'tel']
+                      })
                 }
             ]
         }]

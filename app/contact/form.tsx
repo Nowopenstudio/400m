@@ -50,7 +50,7 @@ export default function Form({form, settings}:any) {
         <input className="col-span-2 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Subject" name="subject" required></input>
         <textarea className="border border-[--black] col-span-full rounded-[10px] p-[20px] min-h-[200px]" placeholder="Message" name="message" required></textarea>
         <button type="submit" className={`py-[10px] bg-[--black] text-white uppercase relative col-span-full border border-black text-nav text-center rounded-full mb-[20px]`}>Submit Inquiry</button>
-  
+
        </form>
        </div>
     )}

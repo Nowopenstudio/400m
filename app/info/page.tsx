@@ -14,7 +14,7 @@ export default async function Home() {
    
     
 
-        <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*2)] pb-[200px]">
+        <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*2)] pb-[200px] overflow-x-hidden">
             {/* <Contents content={about}/> */}
          </main>
  

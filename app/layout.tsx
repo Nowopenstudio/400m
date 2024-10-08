@@ -23,7 +23,7 @@ export default function RootLayout({
   useEffect(()=>{
     if(pageID.includes('info')){
       setPhase(1)
-    }else if(pageID.includes('sign')){
+    }else if(pageID.includes('membership')){
       setPhase(2)
     }else if(pageID.includes('contact')){
       setPhase(3)
@@ -38,8 +38,8 @@ export default function RootLayout({
       <SmoothScrolling>
     <div className='relative w-full'>
         <Navbar phase={phase} setPhase={setPhase}/>
-  
-          
+        
+            
         </div>
         {children}
         </SmoothScrolling>

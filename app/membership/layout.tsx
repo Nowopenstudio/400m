@@ -1,19 +1,17 @@
 'use client'
-
-import { animate, useMotionValue, motion } from "framer-motion";
-
-import Image from "next/image";
-import useMeasure from "react-use-measure";
 import React, { useEffect, useState } from "react";
-import { Reveal } from "../lib/util/reveal";
-import { PortableText } from "next-sanity";
-import Portfolio from "./portfolio";
-import SignUp from "./signup";
+import Link from "next/link";
 import { scrollToPos } from "../lib/util/sanity";
+import { usePathname } from "next/navigation";
 
 
 
-export default function Content({preface,form,prod,settings,design,d_d}:any) {
+export default function RootLayout({
+    children
+  }: Readonly<{
+    children: React.ReactNode;
+  }>) {
+    const pageID = usePathname();
     const [sec, setSec] = useState(0)
     const [signup, setSign] = useState(0)
 
@@ -22,6 +20,17 @@ export default function Content({preface,form,prod,settings,design,d_d}:any) {
     scrollToPos(0)
 
   }
+  useEffect(()=>{
+    if(pageID.includes('productions')){
+      setSec(0)
+      setSign(0)
+    }else if(pageID.includes('d-d')){
+      setSec(1)
+      setSign(0)
+    }else{
+        setSign(1)
+    }
+}, [pageID])
   return (
    
     
@@ -29,12 +38,12 @@ export default function Content({preface,form,prod,settings,design,d_d}:any) {
                 <div className={`text-nav w-full fixed h-[var(--bar)] col-span-full grid grid-cols-12 top-[var(--bar)] py-[8px] z-50 toggle-button ${sec==0?"":"toggle-right"} pointer-events-auto px-[10px] md:pr-[0]`}>
                     <div className="relative z-0 bg-white h-full flex border border-black col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5 justify-between uppercase rounded-full items-center text-center">
                         <div className="toggle-bar absolute h-full w-1/2 rounded-full bg-[var(--black)]"></div>
-                        <div className={`relative toggle-opt w-[50%] ${sec==0?"text-[--white]":"text-[--black]"}`} onClick={() => toggleSec(0)}>Productions</div>
-                        <div className={`relative toggle-opt w-[50%] text-[${sec==1?"--white":"--black"}] ${signup?"pointer-events-none opacity-50":""}`} onClick={() => toggleSec(1)}>D+D</div>
+                        <Link href="/membership/productions" className={`relative toggle-opt w-[50%] ${sec==0?"text-[--white]":"text-[--black]"}`} onClick={() => toggleSec(0)}>Productions</Link>
+                        <Link href="/membership/d-d" className={`relative toggle-opt w-[50%] text-[${sec==1?"--white":"--black"}] ${signup?"pointer-events-none opacity-50":""}`} onClick={() => toggleSec(1)}>D+D</Link>
 
                     </div>
                 </div>
-                {signup==0?(
+                {/* {signup==0?(
                      <div className="w-full grid grid-cols-12 col-span-full">
                         {sec==0?(
                             <Reveal styleSet="portfolio relative col-span-full" key={`sec-${sec}`}>
@@ -79,7 +88,13 @@ export default function Content({preface,form,prod,settings,design,d_d}:any) {
                     
                     <SignUp form={form} sec={sec} contact={settings.contacts[0].email}/>
                 )}
-               
+                */}
+                    {children}
+
+                    {signup === 0?(
+                         <Link href="/membership/sign-up" className={`border-[--black] fixed w-[100vw] py-[8px] bottom-[--bar] grid grid-cols-12 px-[10px] md:px-0 ${sec==0?"pointer-events-auto":"pointer-events-none"}`}><div className={`border-[--black] col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5  py-[10px] uppercase relative border  text-nav text-center rounded-full ${sec==0?"pointer-events-auto bg-[--black]  text-white":"bg-gray-100 pointer-events-none text-[--black]"}`} onClick={() => setSign(1)}>{`${sec==0?"Apply to 400m: Production":"400M: D+D Coming soon"}`}</div></Link>
+                    ):('')}
+                   
             </React.Fragment>
   
 
