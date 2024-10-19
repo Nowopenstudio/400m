@@ -45,8 +45,8 @@ export default function Caution({form}:any) {
              <div className="col-start-2 col-span-10 sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 pb-[60px] md:pb-[100px] md">
               {form.map((item:any,i:any)=>{
                 return(
-                  <div  onClick={(e)=> toggle(e)} key={`prelim-${i}`} data-prelim={i} className={`pointer-events-auto relative py-[20px] px-[20px] col-span-2 opacity-50`}>
-                    <div className={`radial-dot bg-white rounded-full border border-[--black] absolute top-[25px] left-[-20px] w-[20px] h-[20px]`}/>
+                  <div  onClick={(e)=> toggle(e)} key={`prelim-${i}`} data-prelim={i} className={`cursor-pointer relative py-[20px] px-[20px] col-span-2 opacity-50`}>
+                    <div className={`cursor-pointer pointer-events-auto z-10 radial-dot bg-white rounded-full border border-[--black] absolute top-[25px] left-[-20px] w-[20px] h-[20px]`}/>
                     <PortableText value={item.single}/>
                   </div>
                 )
