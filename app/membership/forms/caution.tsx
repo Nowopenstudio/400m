@@ -13,20 +13,16 @@ import Link from "next/link";
 
 export default function Caution({form}:any) {
   const contextInput = useContext<any>(InputContext);
-  const [pre, setPre]  = useState({})
   const [total,setTotal] = useState(0)
 
   const toggle = (e:any)=>{
     const curr = e.currentTarget.getAttribute('data-prelim')
-    const preSet = pre
-    if(preSet[`toggle${curr}`]){
-    preSet[`toggle${curr}`] = false
+    if(e.currentTarget.classList.contains('checked')){
     e.currentTarget.classList.remove('checked')
     const count = total-1
     contextInput.activeChange(null)
     
   }else{
-    preSet[`toggle${curr}`] = true
     e.currentTarget.classList.add('checked')
     const count = total+1
     setTotal(count)
@@ -49,7 +45,7 @@ export default function Caution({form}:any) {
              <div className="col-start-2 col-span-10 sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 pb-[60px] md:pb-[100px] md">
               {form.map((item:any,i:any)=>{
                 return(
-                  <div  onClick={(e)=> toggle(e)} key={`prelim-${i}`} data-prelim={i} className={`pointer-events-auto relative py-[20px] px-[20px] col-span-2 ${pre['toggle'+i]?"checked text-[--black]":"text-gray-500"}`}>
+                  <div  onClick={(e)=> toggle(e)} key={`prelim-${i}`} data-prelim={i} className={`pointer-events-auto relative py-[20px] px-[20px] col-span-2 `}>
                     <div className={`radial-dot bg-white rounded-full border border-[--black] absolute top-[25px] left-[-20px] w-[20px] h-[20px]`}/>
                     <PortableText value={item.single}/>
                   </div>
