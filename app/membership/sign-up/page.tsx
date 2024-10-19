@@ -6,14 +6,10 @@ import SignUp from "../signup";
 export default async function Home() {
   const query = await getData(`{
     'settings':*[_type=="settings"]{contacts},
-    'preface':*[_type=="info" && slug.current=="preface"]{title,content},
-    'd_d':*[_type=="info" && slug.current=="d-d"]{title,content},
-    'form':*[_type=="form"]{section,appSuccess, emailSub, emailer },
-    'prod':*[_type=="project" && ( dept->slug.current == "productions")]{"logoUrl":logo.asset->url,title,desc, slug,"images":content[]{desc,"imageUrl":image.asset->url}},
-    'design':*[_type=="project" && ( dept->slug.current == "d-d")]{"logoUrl":logo.asset->url,title,desc, slug,"images":content[]{desc,"imageUrl":image.asset->url}}
+    'form':*[_type=="form"]{disclaim, section,appSuccess, emailSub, emailer }
     }`)
 
-  const {preface, form, prod, settings, design, d_d} = query.data
+  const {form, settings} = query.data
 
 
   return (

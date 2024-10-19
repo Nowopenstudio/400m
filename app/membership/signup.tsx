@@ -7,6 +7,7 @@ import StageOne from "./forms/stageOne";
 import StageTwo from "./forms/stageTwo";
 import { sendEmail } from "../lib/util/sanity";
 import { PortableText } from "next-sanity";
+import Caution from "./forms/caution";
 
 
 export const InputContext = createContext({})
@@ -40,7 +41,7 @@ export default function SignUp({form, contact}:any) {
     
 
     useEffect(()=>{
-        const count = 1+(form[0].section[1].single.length)+(form[0].section[2].single.length)
+        const count = 2+(form[0].section[1].single.length)+(form[0].section[2].single.length)
 
         setTotal(count)
     }, [])
@@ -73,18 +74,24 @@ export default function SignUp({form, contact}:any) {
   
        <div className="col-span-full pb-[60px]">
             {currPage < 1?(
-                <InputContext.Provider value={{ activeChange, currPage, answers }}>
-                  <Prelim form={form[0].section[0]}/></InputContext.Provider>
+                      <InputContext.Provider value={{ activeChange, currPage, answers }}>
+                      <Caution form={form[0].disclaim}/></InputContext.Provider>
             ):(
-                currPage < (form[0].section[1].single.length+1)?(
+                 currPage == 1?(
                     <InputContext.Provider value={{ activeChange, currPage, answers }}>
-                    <StageOne single={form[0].section[1].single[currPage - 1]}/>  </InputContext.Provider>
-              ):(
-                <InputContext.Provider value={{ activeChange, currPage, answers }}>
-                <StageOne single={form[0].section[2].single[currPage - (1+form[0].section[1].single.length)]}/>    </InputContext.Provider>
-              )
-
+                      <Prelim form={form[0].section[0]}/></InputContext.Provider>
+                ):(
+                    currPage < (form[0].section[1].single.length+2)?(
+                        <InputContext.Provider value={{ activeChange, currPage, answers }}>
+                        <StageOne single={form[0].section[1].single[currPage - 2]}/>  </InputContext.Provider>
+                  ):(
+                    <InputContext.Provider value={{ activeChange, currPage, answers }}>
+                    <StageOne single={form[0].section[2].single[currPage - (2+form[0].section[1].single.length)]}/>    </InputContext.Provider>
+                  )
+    
+                )
             )}
+
     
         </div>
 

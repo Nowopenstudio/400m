@@ -40,7 +40,7 @@ export default function Prelim({form}:any) {
                   </div>
                  ):('')}
              
-             <div className="col-start-2 col-span-10 md:col-start-3 md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-[20px]">
+             <div className="col-start-2 col-span-10 pb-[100px] md:pb-[0] md:col-start-3 md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-[20px]">
               {form.single.map((item:any,i:any)=>{
                 return(
                   <div  onClick={(e)=> toggle(e)} key={`prelim-${i}`} data-prelim={i} className={`formBut uppercase py-[10px] px-[10px] col-span-1 border border-[--black] rounded-full text-nav ${pre['toggle'+i]?"active":""}`}>

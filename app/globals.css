@@ -164,10 +164,21 @@ textarea:focus{
   color: var(--white);
 }
 
+.checked .radial-dot{
+  background-color: var(--black);
+}
+
 
 @media (max-width: 900px) {
   h1{font-size:1rem}
   p, ul, ol, li{font-size: 1em}
+  .text-nav{letter-spacing: 3px;}
+
+}
+
+@media (max-width: 400px) {
+  h1{font-size:1rem}
+  p, ul, ol, li{font-size: .875em}
   .text-nav{letter-spacing: 3px;}
 
 }

@@ -5,6 +5,22 @@ export default{
     type: 'document',
     title:'Forms',
     fields:[
+    {
+        name:'disclaim',
+        type:'array',
+        title:'Disclaimer',
+        of:[{
+            name:'point',
+            type:'object',
+            title:'Point',
+            fields:[{
+                type:'array',
+                name:'single',
+                title:'Single Point',
+                of:[{type:'block'}]
+            }]
+        }]
+    },
     {   name:'section',
         type:'array',
         title:'Questionaires',
