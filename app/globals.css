@@ -168,6 +168,10 @@ textarea:focus{
   background-color: var(--black);
 }
 
+.checked {
+  opacity: 1;
+}
+
 
 @media (max-width: 900px) {
   h1{font-size:1rem}
