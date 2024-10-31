@@ -174,14 +174,14 @@ textarea:focus{
 
 
 @media (max-width: 900px) {
-  h1{font-size:2rem}
+  h1{font-size:1.25rem}
   p, ul, ol, li{font-size: 1em}
   .text-nav{letter-spacing: 3px;}
 
 }
 
 @media (max-width: 400px) {
-  h1{font-size:1.5rem}
+  h1{font-size:1.25rem}
   p, ul, ol, li{font-size: .875em}
   .text-nav{letter-spacing: 3px;}
 
