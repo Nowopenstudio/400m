@@ -25,8 +25,10 @@ export default function RootLayout({
       setPhase(1)
     }else if(pageID.includes('membership')){
       setPhase(2)
-    }else if(pageID.includes('contact')){
+    }else if(pageID.includes('structure')){
       setPhase(3)
+    }else if(pageID.includes('contact')){
+      setPhase(4)
     }else{
       setPhase(0)
     }

@@ -95,7 +95,7 @@ export default function SignUp({form, contact}:any) {
     
         </div>
 
-<div className={`w-full grid grid-cols-12 fixed bottom-[var(--bar)] py-[10px] px-[10px] md:px-0`}>
+<div className={`w-full grid grid-cols-12 fixed bottom-[calc(var(--bar)*2)] py-[10px] px-[10px] md:px-0`}>
     {currPage === total-1?(
         <div className="col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5 mb-[10px]">
             <div onClick={()=>submitToggle()} className={` text-white uppercase text-center text-nav  py-[10px] bg-[var(--black)] rounded-full ${currPage == total-1?"":"opacity-0 pointer-events-none"}`}>Submit Application</div>

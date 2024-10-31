@@ -116,24 +116,24 @@ textarea:focus{
 
 }
 
-.phase-0 .nav-top{
+.phase-0 .nav-one{
   height:100vh
 }
 
-.phase-1 .nav-top{
-  height:calc(100vh - (var(--bar)*2));
+.phase-1 .nav-one{
+  height:calc(100vh - (var(--bar)*3));
 }
 
-.phase-2 .nav-mid{
-  height:calc(100vh - (var(--bar)*2));
+.phase-2 .nav-two{
+  height:calc(100vh - (var(--bar)*3));
 }
 
-.phase-3 .nav-low{
-  height:calc(100vh - (var(--bar)*2));
+.phase-3 .nav-three{
+  height:calc(100vh - (var(--bar)*3));
 }
 
 .stage{
-  height:calc(100vh - (var(--bar)*2));
+  height:calc(100vh - (var(--bar)*3));
 }
 
 /* layout */

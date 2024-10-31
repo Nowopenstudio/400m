@@ -4,4 +4,5 @@ import form from "./form"
 import info from "./info"
 import project from "./project"
 import settings from "./settings"
-export const schemaTypes = [info,department,project,form,settings, application]
+import structure from "./structure"
+export const schemaTypes = [info,department,project,form,settings, application, structure]

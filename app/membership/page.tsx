@@ -1,4 +1,5 @@
 import { getData } from "../lib/util/sanity";
+import Image from "next/image";
 import Content from "./layout";
 
 export default async function Home() {

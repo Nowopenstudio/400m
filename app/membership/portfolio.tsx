@@ -44,7 +44,7 @@ useEffect(()=>{
           <motion.div  className="absolute flex left-0 top-0 items-center " ref={ref} style={{x:xTranslation}}>
                {[...work, ...work, ...work].map((item,i)=>{
                  return(
-                   <Reveal count={i} styleSet="relative overflow-hidden w-[75vw] sm:w-[50vw] xl:w-[25vw] border border-black" key={`orgs-${i}`}>
+                   <div className="relative overflow-hidden w-[75vw] sm:w-[50vw] xl:w-[25vw] border border-black" key={`orgs-${i}`}>
                   <Link href={`/membership/${section}/${item.slug.current}`}>
                       <div className="projHold p-[10px] grid grid-cols-[1fr_5fr] items-center">
                       <Image alt="image" height={0}  width={0} sizes="100vw"  src={item.logoUrl}  className="w-full object-fill"/>
@@ -54,7 +54,7 @@ useEffect(()=>{
                       </div>
                       </div><div className="w-full"><Image alt="image" height={0}  width={0} sizes="100vw"  src={item.images[0].imageUrl}  className="w-full object-fill"/></div>
                   </Link>
-                    </Reveal>
+                    </div>
                  )
                })}
              
