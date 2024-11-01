@@ -23,9 +23,9 @@ export default function RootLayout({
   useEffect(()=>{
     if(pageID.includes('info')){
       setPhase(1)
-    }else if(pageID.includes('membership')){
-      setPhase(2)
     }else if(pageID.includes('structure')){
+      setPhase(2)
+    }else if(pageID.includes('membership')){
       setPhase(3)
     }else if(pageID.includes('contact')){
       setPhase(4)

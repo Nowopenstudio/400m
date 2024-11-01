@@ -35,7 +35,7 @@ export default function RootLayout({
    
     
             <React.Fragment >
-                <div className={`text-nav w-full fixed h-[var(--bar)] col-span-full grid grid-cols-12 top-[var(--bar)] py-[8px] z-50 toggle-button ${sec==0?"":"toggle-right"} pointer-events-auto px-[10px] md:pr-[0]`}>
+                <div className={`text-nav w-full fixed h-[var(--bar)] col-span-full grid grid-cols-12 top-[calc(var(--bar)*2)] py-[8px] z-50 toggle-button ${sec==0?"":"toggle-right"} pointer-events-auto px-[10px] md:pr-[0]`}>
                     <div className="relative z-0 bg-white h-full flex border border-black col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5 justify-between uppercase rounded-full items-center text-center">
                         <div className="toggle-bar absolute h-full w-1/2 rounded-full bg-[var(--black)]"></div>
                         <Link href="/membership/productions" className={`relative toggle-opt w-[50%] ${sec==0?"text-[--white]":"text-[--black]"}`} onClick={() => toggleSec(0)}>Productions</Link>
@@ -92,7 +92,7 @@ export default function RootLayout({
                     {children}
 
                     {signup === 0?(
-                         <Link href="/membership/sign-up" className={`border-[--black] fixed w-[100vw] py-[8px] bottom-[calc(var(--bar)*2)] grid grid-cols-12 px-[10px] md:px-0 ${sec==0?"pointer-events-auto":"pointer-events-none"}`}><div className={`border-[--black] col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5  py-[10px] uppercase relative border  text-nav text-center rounded-full ${sec==0?"pointer-events-auto bg-[--black]  text-white":"bg-gray-100 pointer-events-none text-[--black]"}`} onClick={() => setSign(1)}>{`${sec==0?"Apply to 400m: Production":"400M: D+D Coming soon"}`}</div></Link>
+                         <Link href="/membership/sign-up" className={`border-[--black] fixed w-[100vw] py-[8px] bottom-[--bar] grid grid-cols-12 px-[10px] md:px-0 ${sec==0?"pointer-events-auto":"pointer-events-none"}`}><div className={`border-[--black] col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5  py-[10px] uppercase relative border  text-nav text-center rounded-full ${sec==0?"pointer-events-auto bg-[--black]  text-white":"bg-gray-100 pointer-events-none text-[--black]"}`} onClick={() => setSign(1)}>{`${sec==0?"Apply to 400m: Production":"400M: D+D Coming soon"}`}</div></Link>
                     ):('')}
                    
             </React.Fragment>

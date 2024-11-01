@@ -44,7 +44,7 @@ export default function StageTwo() {
 
 
   return (
-            <Reveal  styleSet={`${isLoading?"opacity-[.25] pointer-events-none":""} w-[100vw] h-[calc(100vh-var(--bar))] grid grid-cols-12 fixed top-0 left-0 z-50 py-[var(--bar)]`} >      
+            <Reveal  styleSet={`${isLoading?"opacity-[.25] pointer-events-none":""} w-[100vw] h-[100vh] grid grid-cols-12 fixed top-0 left-0 z-50 pt-[calc(var(--bar)*2)] pb-[--bar]`} >      
              
          
               <div onClick={()=> contextInput.submitToggle()} className={`${isLoading?"opacity-[.25] pointer-events-none":""} col-span-12 xl:col-span-3 col-start-1 grid grid-cols-1 items-center text-nav uppercase text-center bg-white xl:bg-none mt-[--bar]`}>Back</div>

@@ -18,7 +18,7 @@ export default async function Home(params:any) {
 
       
           <Reveal styleSet="w-full grid grid-cols-12 py-[160px]">
-            <div className="col-span-11 col-start-2 md:col-span-10 md:col-start-2 pt-0 xl:pt-[8px] xl:col-span-3 xl:col-start-2 project-title grid grid-cols-4  gap-[20px] items-center xl:items-start">
+            <div className="col-span-11 col-start-2 md:col-span-10 md:col-start-2 pt-[calc(var(--bar)*2)] xl:pt-[8px] xl:col-span-3 xl:col-start-2 project-title grid grid-cols-4  gap-[20px] items-center xl:items-start">
                 <div className="col-span-1">
                 <Image alt="image" height={0}  width={0} sizes="100vw"  src={project[0].logoUrl}  className="w-full object-fill "/>
                 </div>

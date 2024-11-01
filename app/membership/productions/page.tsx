@@ -22,7 +22,7 @@ export default async function Home() {
 
 
       
-          <div className="w-full grid grid-cols-12 col-span-full pt-[--bar] pb-[160px]">
+          <div className="w-full grid grid-cols-12 col-span-full pt-[calc(var(--bar)*2)] pb-[160px]">
             <Reveal styleSet="portfolio relative col-span-full mt-[--bar] overflow-hidden">
                   <Portfolio work={prod} section={'productions'}/>
             </Reveal>
