@@ -38,6 +38,11 @@ export default{
             ]
         }]
 
+     },
+     {
+        type:"image",
+        name:"cover",
+        title:"image"
      }
     ]
 }
