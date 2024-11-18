@@ -2,10 +2,11 @@ import { Reveal } from "@/app/lib/util/reveal";
 import { getData } from "@/app/lib/util/sanity";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
+import { MuxVideoBG } from "@/app/lib/util/muxPlayer";
 
 export default async function Home(params:any) {
   const query = await getData(`{
-    'project':*[_type=="project" && slug.current == '${params.params.slug}']{"logoUrl":logo.asset->url,title,desc, slug,"images":content[]{desc,"imageUrl":image.asset->url}, social, status}
+    'project':*[_type=="project" && slug.current == '${params.params.slug}']{"logoUrl":logo.asset->url,title,desc, slug,"work":content[]{desc,"imageUrl":image.asset->url, video{asset->{playbackId}}}, social, status}
     }`)
 
   const {project} = query.data
@@ -20,7 +21,7 @@ export default async function Home(params:any) {
           <Reveal styleSet="w-full grid grid-cols-12 py-[160px]">
             <div className="col-span-11 col-start-2 md:col-span-10 md:col-start-2 pt-[calc(var(--bar)*2)] xl:pt-[8px] xl:col-span-3 xl:col-start-2 project-title grid grid-cols-4  gap-[20px] items-center xl:items-start">
                 <div className="col-span-1">
-                <Image alt="image" height={0}  width={0} sizes="100vw"  src={project[0].logoUrl}  className="w-full object-fill "/>
+                <Image alt="image" height={0}  width={0} sizes="100vw"  src={project[0].logoUrl}  className="w-full object-contain "/>
                 </div>
                 <div className="col-span-4 col-start-2">
                   <h1>{project[0].title}</h1>
@@ -42,9 +43,17 @@ export default async function Home(params:any) {
               ):('')}
             </div>
             <div className="projImg w-full col-span-full">
-                {project[0].images.map((img:any,i:any)=>{
+                {project[0].work.map((img:any,i:any)=>{
                   return(
-                  <Image key={`image-${i}`} alt="image" height={0}  width={0} sizes="100vw"  src={img.imageUrl}  className="w-full object-fill "/>
+                    img.video?(
+                      <div className="w-full noControl object-fill"
+                      >
+                        <MuxVideoBG playbackId={img.video.asset.playbackId} title={`${project[0].title}-img${i}`}/>
+                      </div>
+                    ):(
+                      
+                            <Image alt="image" height={0}  width={0} sizes="100vw"  src={img.imageUrl}  className="w-full object-fill"/>
+                    )
                   )
                 })}
             </div>

@@ -16,7 +16,7 @@ export default async function Home() {
    
     
 
-  <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*3)] md:pb-[200px] grid items-center">
+  <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*2)] md:pb-[200px] grid items-center">
     <Structure sections={structure[0].sections}/>
   </main>
  

@@ -18,7 +18,7 @@ export default function Structure({sections}:any) {
       {sections.map((item:any,i:any)=>{
         return(
         item.contentType === "text"?(
-          <div key={`text-${i}`}className="col-start-2 col-span-10  sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 mb-[40px] md:mb-[100px] md:mb-[60px]">
+          <div key={`text-${i}`}className="col-start-2 col-span-10 sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 mb-[40px] md:mb-[100px] md:mb-[60px]">
           <PortableText value={item.text}/>
           </div>
         ):(

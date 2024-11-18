@@ -90,10 +90,15 @@ textarea:focus{
 }
 
 .nav-item.selected .nav-des{
- color:white
+ color:white;
+ opacity:0;
 }
 
 
+.noControl mux-player {
+	/* Hide all controls at once */
+	--controls: none;
+  }
 
 
 /* NAV */
@@ -174,14 +179,14 @@ textarea:focus{
 
 
 @media (max-width: 900px) {
-  h1{font-size:1.25rem}
+  h1{font-size:1.25rem;line-height: 1.15em;}
   p, ul, ol, li{font-size: 1em}
   .text-nav{letter-spacing: 3px;}
 
 }
 
 @media (max-width: 400px) {
-  h1{font-size:1.25rem}
+  h1{font-size:1.25rem;line-height:1.15em}
   p, ul, ol, li{font-size: .875em}
   .text-nav{letter-spacing: 3px;}
 

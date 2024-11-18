@@ -53,6 +53,11 @@ export default{
                     title:"file"
                 },
                 {
+                    name:"video",
+                    type:'mux.video',
+                    title:"Video"
+                },
+                {
                     name:"desc",
                     type:'array',
                     title:"Content",

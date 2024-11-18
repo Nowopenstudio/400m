@@ -2,10 +2,11 @@ import { Reveal } from "@/app/lib/util/reveal";
 import { getData } from "@/app/lib/util/sanity";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
+import { MuxVideoBG } from "@/app/lib/util/muxPlayer";
 
 export default async function Home(params:any) {
   const query = await getData(`{
-    'project':*[_type=="project" && slug.current == '${params.params.slug}']{"logoUrl":logo.asset->url,title,desc, slug,"images":content[]{desc,"imageUrl":image.asset->url}, social, status}
+    'project':*[_type=="project" && slug.current == '${params.params.slug}']{"logoUrl":logo.asset->url,title,desc, slug,"work":content[]{desc,"imageUrl":image.asset->url, video{asset->{playbackId}}}, social, status}
     }`)
 
   const {project} = query.data
@@ -42,9 +43,16 @@ export default async function Home(params:any) {
               ):('')}
             </div>
             <div className="projImg w-full col-span-full">
-                {project[0].images.map((img:any,i:any)=>{
+            {project[0].work.map((img:any,i:any)=>{
                   return(
-                  <Image key={`image-${i}`} alt="image" height={0}  width={0} sizes="100vw"  src={img.imageUrl}  className="w-full object-fill "/>
+                    img.video?(
+                      <div className="w-full noControl object-fill"
+                      >
+                        <MuxVideoBG playbackId={img.video.asset.playbackId} title={`${project[0].title}-img${i}`}/>
+                      </div>
+                    ):(
+                       <div className="w-full"> <Image alt="image" height={0}  width={0} sizes="100vw"  src={img.imageUrl}  className="w-full object-fill"/></div>
+                    )
                   )
                 })}
             </div>

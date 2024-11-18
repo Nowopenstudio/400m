@@ -23,7 +23,7 @@ export default function StageOne({single}:any) {
   return (
             <Reveal styleSet="w-full grid grid-cols-12"  key={`text-${contextInput.currPage}`} >      
              
-             <div className="col-start-2 col-span-10 md:col-start-3 md:col-span-8 md:grid-cols-2 xl:col-start-4 xl:col-span-6 grid grid-cols-2 gap-[20px]">
+             <div className="pt-[--bar] col-start-2 col-span-10 md:col-start-3 md:col-span-8 md:grid-cols-2 xl:col-start-4 xl:col-span-6 grid grid-cols-2 gap-[20px]">
            
                   <div  className=" py-[10px] col-span-2 mb-[60px]">
                     <PortableText value={single.content}/>
