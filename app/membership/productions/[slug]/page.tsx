@@ -3,6 +3,7 @@ import { getData } from "@/app/lib/util/sanity";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { MuxVideoBG } from "@/app/lib/util/muxPlayer";
+import { SwitchContent } from "@/app/lib/util/contentSwitch";
 
 export default async function Home(params:any) {
   const query = await getData(`{
@@ -45,14 +46,7 @@ export default async function Home(params:any) {
             <div className="projImg w-full col-span-full">
             {project[0].work.map((img:any,i:any)=>{
                   return(
-                    img.video?(
-                      <div className="w-full noControl object-fill"
-                      >
-                        <MuxVideoBG playbackId={img.video.asset.playbackId} title={`${project[0].title}-img${i}`}/>
-                      </div>
-                    ):(
-                       <div className="w-full"> <Image alt="image" height={0}  width={0} sizes="100vw"  src={img.imageUrl}  className="w-full object-fill"/></div>
-                    )
+                    <SwitchContent work={img} key={`${i}`}title={project[0].title}/>
                   )
                 })}
             </div>

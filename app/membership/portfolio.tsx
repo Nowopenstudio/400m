@@ -7,6 +7,7 @@ import useMeasure from "react-use-measure";
 import React, { useEffect, useState } from "react";
 import { Reveal } from "../lib/util/reveal";
 import { PortableText } from "next-sanity";
+import { SwitchContent } from "../lib/util/contentSwitch";
 import { MuxVideoBG } from "../lib/util/muxPlayer";
 
 
@@ -55,16 +56,10 @@ useEffect(()=>{
                       </div>
                       </div><div className="w-full">
                         {item.work?(
-                          item.work[0].video?(
-                            <div className="w-full noControl object-fill"
-                            >
-                              <MuxVideoBG playbackId={item.work[0].video.asset.playbackId} title={item.title}/>
-                            </div>
-                          ):(
-                            
-                                  <Image alt="image" height={0}  width={0} sizes="100vw"  src={item.work[0].imageUrl}  className="w-full object-fill"/>
-                          )
+                          <SwitchContent work={item.work[0]} title={`${work[0].title}`}/>
                         ):('')}
+                     
+                    
                        
                       </div>
                   </Link>
