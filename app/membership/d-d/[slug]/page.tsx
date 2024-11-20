@@ -10,7 +10,7 @@ export default async function Home(params:any) {
     }`)
 
   const {project} = query.data
-  console.log(project, params)
+
 
 
   return (

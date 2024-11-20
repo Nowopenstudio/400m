@@ -2,12 +2,9 @@
 import { createBlurUp } from '@mux/blurup';
 
 
-// export function urlFor(playbackId: any){
-
-//     const options = {};
-
-//     const getPlaceholder() = async () => {
-//     const { blurDataURL, aspectRatio } = await createBlurUp(playbackId, options);
-// };
-
-// }
+export const blurUp = (async (playbackId:string)=>{
+   
+    const { blurDataURL} = await createBlurUp(playbackId, { time: 0.5 });
+    console.log('blur',blurDataURL)
+    return blurDataURL
+})
