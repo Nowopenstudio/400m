@@ -38,11 +38,11 @@ export default function Form({form, settings}:any) {
     
   <div className="grid grid-cols-12 w-full items-center h-full">
     {success?(
-      <Reveal styleSet="text-center col-start-1 col-span-12 px-[20px] sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 ">
+      <Reveal styleSet="text-center col-start-1 col-span-12 px-[20px] sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 ">
         <PortableText value={form.contactSuccess}/>
       </Reveal>
     ):(
-      <div className="col-start-1 col-span-12 px-[20px] sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 grid-cols-2 grid">
+      <div className="col-start-1 col-span-12 px-[20px] sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 grid-cols-2 grid">
        <div className="text-nav uppercase col-span-full mb-[20px]">Contact Form </div>
        <form onSubmit={submitForm} className={`grid grid-cols-2 col-span-full gap-[20px] ${isLoading?"opacity-[.25] pointer-events-none":""}`}>
         <input className="col-span-1 rounded-full border border-[--black] px-[20px]" type="text" placeholder="Name" name="name" required></input>

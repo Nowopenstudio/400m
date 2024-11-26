@@ -54,6 +54,11 @@ p, ul, ol{
   margin-bottom: 1rem;
 }
 
+em{
+  font-style: normal;
+  text-decoration: underline;
+}
+
 .formBut p{
   font-size: 1.15em;
   margin-bottom: 0;
@@ -165,10 +170,13 @@ textarea:focus{
 }
 
 .active{
-  background-color: #000000;
-  color: var(--white);
+
+ opacity:1;
 }
 
+.active .radial-dot{
+  background-color: var(--black);
+}
 .checked .radial-dot{
   background-color: var(--black);
 }

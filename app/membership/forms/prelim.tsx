@@ -31,19 +31,20 @@ export default function Prelim({form}:any) {
 
 
   return (
-            <Reveal styleSet="w-full grid grid-cols-12">      
+            <Reveal styleSet="w-full grid grid-cols-12 pb-[100px]">      
            
                  {form.intro?(
-                   <div className="col-start-2 col-span-10  pt-[--bar] sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 mb-[40px] md:mb-[60px] lrg:mb-[40px]">
+                   <div className="col-start-2 col-span-10  pt-[--bar] px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 mb-[40px] md:mb-[60px] lrg:mb-[40px]">
                   <PortableText value={form.intro}/>
                   <Link href="/contact"><div className={`px-[20px] py-[10px] bg-gray-100 rounded-full uppercase text-nav mt-[20px]`}>Contact Form</div></Link>
                   </div>
                  ):('')}
              
-             <div className="col-start-2 col-span-10 pb-[100px] md:pb-[0] md:col-start-3 md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-[20px]">
+             <div className="col-start-2 col-span-10 pb-[100px] md:pb-[0] md:col-start-4 md:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-[20px]">
               {form.single.map((item:any,i:any)=>{
                 return(
-                  <div  onClick={(e)=> toggle(e)} key={`prelim-${i}`} data-prelim={i} className={`formBut uppercase py-[10px] px-[10px] col-span-1 border border-[--black] rounded-full text-nav ${pre['toggle'+i]?"active":""}`}>
+                  <div  onClick={(e)=> toggle(e)} key={`prelim-${i}`} data-prelim={i} className={`opacity-[.75] cursor-pointer pl-20px py-[10px] px-[10px] col-span-2  relative ${pre['toggle'+i]?"active":""}`}>
+                     <div className={`cursor-pointer pointer-events-auto z-10 radial-dot bg-white rounded-full border border-[--black] absolute top-[15px] left-[-20px] w-[20px] h-[20px]`}/>
                     <PortableText value={item.content}/>
                   </div>
                 )

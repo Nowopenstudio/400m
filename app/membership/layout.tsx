@@ -35,7 +35,7 @@ export default function RootLayout({
    
     
             <React.Fragment >
-                <div className={`text-nav w-full fixed h-[var(--bar)] col-span-full grid grid-cols-12 top-[calc(var(--bar)*2)] py-[8px] z-50 toggle-button ${sec==0?"":"toggle-right"} pointer-events-auto px-[10px] md:pr-[0]`}>
+                <div className={`text-nav w-full fixed h-[var(--bar)] col-span-full grid grid-cols-12 top-[calc(var(--bar)*2)] py-[8px] z-50 toggle-button ${sec==0?"":"toggle-right"} pointer-events-auto px-[10px] md:pl-[0px] md:px-[0]`}>
                     <div className="relative z-0 bg-white h-full flex border border-black col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5 justify-between uppercase rounded-full items-center text-center">
                         <div className="toggle-bar absolute h-full w-1/2 rounded-full bg-[var(--black)]"></div>
                         <Link href="/membership/productions" className={`relative toggle-opt w-[50%] ${sec==0?"text-[--white]":"text-[--black]"}`} onClick={() => toggleSec(0)}>Productions</Link>
