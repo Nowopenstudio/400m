@@ -22,7 +22,7 @@ export default function RootLayout({
   }
   useEffect(()=>{
     if(pageID.includes('productions')){
-      setSec(0)
+      setSec(1)
       setSign(0)
     }else if(pageID.includes('d-d')){
       setSec(1)

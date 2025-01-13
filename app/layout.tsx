@@ -24,11 +24,11 @@ export default function RootLayout({
     if(pageID.includes('info')){
       setPhase(1)
     }else if(pageID.includes('structure')){
-      setPhase(2)
+      setPhase(1)
     }else if(pageID.includes('membership')){
-      setPhase(3)
+      setPhase(1)
     }else if(pageID.includes('contact')){
-      setPhase(4)
+      setPhase(1)
     }else{
       setPhase(0)
     }
@@ -38,11 +38,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
       <SmoothScrolling>
-    <div className='relative w-full'>
+ 
         <Navbar phase={phase} setPhase={setPhase}/>
         
             
-        </div>
+        
         {children}
         </SmoothScrolling>
           </body>
