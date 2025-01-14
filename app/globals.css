@@ -92,7 +92,7 @@ textarea:focus{
 .text-nav{
   font-family: 'sans-ex', 'helvetica','arial'; 
   font-size:7pt;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 }
 
 .nav-item.selected .nav-des{
@@ -111,6 +111,19 @@ textarea:focus{
 .nav-item{
   transition: all ease-in-out .25s;
   height:var(--bar);
+}
+
+.navBar{
+  background-color: rgba(255,255,255,.8);
+  backdrop-filter: blur(2px);
+  transition: transform .25s ease-in-out;
+  transform: translateY(calc(-100% + var(--bar)))
+}
+
+.navBar.active{
+  background-color: rgba(255,255,255,1);
+  transform: translateY(0)
+
 }
 
 
@@ -190,13 +203,13 @@ textarea:focus{
 @media (max-width: 900px) {
   h1{font-size:1.25rem;line-height: 1.15em;}
   p, ul, ol, li{font-size: 1em}
-  .text-nav{letter-spacing: 3px;}
+  .text-nav{letter-spacing: 2px;}
 
 }
 
 @media (max-width: 400px) {
   h1{font-size:1.25rem;line-height:1.15em}
   p, ul, ol, li{font-size: .875em}
-  .text-nav{letter-spacing: 3px;}
+  .text-nav{letter-spacing: 2px;}
 
 }

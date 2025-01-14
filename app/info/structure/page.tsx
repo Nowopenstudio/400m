@@ -1,4 +1,4 @@
-import { getData } from "../lib/util/sanity";
+import { getData } from "../../lib/util/sanity";
 import Structure from "./structure";
 import Form from "./structure";
 
@@ -16,7 +16,7 @@ export default async function Home() {
    
     
 
-  <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*2)] md:pb-[200px] grid items-center">
+  <main className="col-span-full min-h-[100vh] pt-[calc(var(--bar)*2)]   ">
     <Structure sections={structure[0].sections}/>
   </main>
  

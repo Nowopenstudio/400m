@@ -2,7 +2,7 @@
 'use client'
 
 import { PortableText } from "next-sanity";
-import { Reveal } from "../lib/util/reveal";
+import { Reveal } from "../../lib/util/reveal";
 import { Image } from "next-sanity/image";
 
 export default function Structure({sections}:any) {
@@ -14,7 +14,7 @@ export default function Structure({sections}:any) {
     
 
     
-  <div className="grid grid-cols-12 w-full items-center h-full">
+  <div className="grid grid-cols-12 w-full">
       {sections.map((item:any,i:any)=>{
         return(
         item.contentType === "text"?(

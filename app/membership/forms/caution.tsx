@@ -37,7 +37,7 @@ export default function Caution({form}:any) {
   return (
             <Reveal styleSet="w-full grid grid-cols-12">      
            
-                  <div className="pt-[calc(var(--bar)*2)] md:pt-[--bar] col-start-2 col-span-10 sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 mb-[10px] md:mb-[10px]">
+                  <div className=" col-start-2 col-span-10 sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 mb-[10px] md:mb-[10px]">
                     <PortableText value={form.intro}/>
                    <div className={`px-[20px]  uppercase text-nav`}>Disclaimer</div>
                   </div>
