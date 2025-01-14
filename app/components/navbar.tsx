@@ -38,7 +38,7 @@ export default function Navbar({phase, setPhase}:any){
                     </div>
                     <div className="w-[132px]">
                     <Link  href="/membership/productions"><div  className="mb-[4px] py-[4px]">Production</div></Link>
-                    <Link  href="/membership/d-d"><div  className="mb-[30px] py-[4px]">D+D</div></Link>
+                    <Link  href="/membership/d-d"><div  className="mb-[4px] py-[4px]">D+D</div></Link>
                     <Link  href="/membership/jobs"><div  className="mb-[30px] py-[4px]">Jobs</div></Link>
                     <div>Membership</div>
                         </div>
