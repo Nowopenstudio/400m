@@ -29,7 +29,7 @@ export default async function Home() {
                   <Portfolio work={prod} section={'productions'}/>
             </Reveal>
             <div className="w-[100vw] grid grid-cols-12">
-              <div className="col-start-2 col-span-10 px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 pt-[60px]">
+              <div className="px-[16px] sm:px-0 col-start-1 col-span-12 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 pt-[60px]">
                           {preface[0].content.map((item:any, i:any)=>{
                               return(
                                   <PortableText key={`item-${i}`} value={item.content}/>
