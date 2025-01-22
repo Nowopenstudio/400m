@@ -16,7 +16,7 @@ export default async function Home() {
    
     
 
-  <main className="col-span-full min-h-[100vh] pt-[calc(var(--bar)*2)]   ">
+  <main className="col-span-full min-h-[100vh] pt-[calc(var(--bar)*2)]  ">
     <Structure sections={structure[0].sections}/>
   </main>
  

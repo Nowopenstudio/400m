@@ -16,6 +16,7 @@ export default function Jobs({sections}:any) {
 
     
   <div className="grid grid-cols-12 w-full">
+       <div className="px-[16px] col-start-1 col-span-12 sm:px-0 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6"><div className={`text-nav mb-[40px] border-[--black] border rounded-full uppercase w-full py-[8px] bottom-[--bar] px-[10px]`}>Job Listings</div></div>
       {sections.map((item:any,i:any)=>{
         return(
        

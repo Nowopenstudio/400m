@@ -28,6 +28,7 @@ export default async function Home() {
             </Reveal>
            <div className="w-[100vw] grid grid-cols-12">
               <div className="px-[16px] sm:px-0 col-start-1 col-span-12 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 pt-[60px]">
+              <div className={`text-nav mb-[40px] border-[--black] border rounded-full uppercase w-full py-[8px] bottom-[--bar] px-[10px]`}>D+D</div>
                           {d_d[0].content.map((item:any, i:any)=>{
                               return(
                                   <PortableText key={`item-${i}`} value={item.content}/>
