@@ -17,7 +17,7 @@ export default async function Home() {
       
                 <Reveal styleSet="px-[16px] sm:px-0 col-start-1 col-span-12 sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6">
                     <div className="w-full min-h-[100vh] pt-[calc(var(--bar)*2)] ">
-                    <div className={`text-nav mb-[40px] border-[--black] border rounded-full uppercase w-full py-[8px] bottom-[--bar] px-[10px]`}>Principles</div>
+                    <div className={`text-nav text-center mb-[40px] border-[--black] border rounded-full uppercase w-full py-[8px] bottom-[--bar] px-[10px]`}>Principles</div>
                   {principles?(
                   principles[0].content.map((item:any,i:any)=>{
                       return(
