@@ -42,6 +42,7 @@ export default async function Home() {
              <div className="col-span-full"> <Image alt="image" height={0}  width={0} sizes="100vw" src={preface[0].imageURL}  className="w-full object-fill"/></div>
             </div>
           </div>
+          // new
         
  
     
