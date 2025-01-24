@@ -85,7 +85,7 @@ li::before{
   position:absolute;
   width:10px;
   border: 1px solid var(--black);
-  transform: translate(-110%, 6px);
+  transform: translate(-110%, 3px);
 }
 
 textarea:focus{
@@ -102,6 +102,15 @@ textarea:focus{
   font-family: 'sans-ex', 'helvetica','arial'; 
   font-size:7pt;
   letter-spacing: 2px;
+  line-height: .75em;
+}
+
+.buttonText{
+  display: block;
+  line-height: 7pt;
+  overflow:hidden;
+  align-items: center;
+  overflow: hidden;
 }
 
 .nav-item.selected .nav-des{
@@ -221,4 +230,8 @@ textarea:focus{
   p, ul, ol, li{font-size: .875em}
   .text-nav{letter-spacing: 2px;}
 
+}
+
+@media only screen and (max-width: 480px){
+  .text-nav{padding-top:12px;}
 }
