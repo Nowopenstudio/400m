@@ -51,7 +51,7 @@ h2{
   text-transform: uppercase;
 }
 
-p, ul, ol{
+p, li{
   font-size: 1.15em;
   margin-bottom: 1rem;
 }
