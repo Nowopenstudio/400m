@@ -37,12 +37,12 @@ export default function Navbar({phase, setPhase}:any){
     
     return(
         <div className={` uppercase w-[100vw] h-[100vh] fixed z-[50]  overflow-hidden phase-${phase} pointer-events-none`}>
-           <Link onClick={() => setPhase(1)} className="z-[60] relative w-full h-full" href="/info/manifesto"> <div className={`nav-item nav-one w-full`}> <div className={`h-[var(--bar)] w-[--bar]  py-[8px] px-[8px]`}><Logo className="logo absolute top-0 left-0 pointer-events-auto" fill={`#232323`} width={30} height={30} /> </div></div></Link>
+           <Link onClick={() => setPhase(1)} className="z-[51] relative w-full h-full" href="/info/manifesto"> <div className={`nav-item nav-one w-full`}> <div className={`h-[var(--bar)] w-[--bar]  py-[8px] px-[8px]`}><Logo className="logo absolute top-0 left-0 pointer-events-auto z-[52]" fill={`#232323`} width={30} height={30} /> </div></div></Link>
            {phase==1?(
     
                       mobile?(
                         
-                            <div onClick={()=>toggleMenu()} className={`cursor-pointer navBar border-black pointer-events-auto absolute w-[100vw] ${active?"active border-b":""} h-auto top-0 right-0 z-[51] py-[16px] text-nav flex justify-end items-end  flex-wrap`}>
+                            <div onClick={()=>toggleMenu()} className={`cursor-pointer navBar border-black pointer-events-auto absolute w-[100vw] ${active?"active border-b":""} h-auto top-0 right-0 z-[50] py-[16px] text-nav flex justify-end items-end  flex-wrap`}>
                                 < div className="w-full grid grid-cols-6">
                                     <div className="col-span-3 col-end-7 justify-end mb-[100px] pt-[100px]">
                                         <div className='mb-[20px]'>Info</div>
@@ -72,7 +72,7 @@ export default function Navbar({phase, setPhase}:any){
                                     
                      
                       ):(
-                        <div onClick={()=>setExit()} onMouseEnter={()=>setEnter()} onMouseLeave={()=>setExit()} className={`navBar border-black pointer-events-auto absolute w-[100vw] h-auto top-0 right-0 z-[51] py-[16px] text-nav flex justify-end items-end  ${hover?"active border-y border":""}`}>
+                        <div onClick={()=>setExit()} onMouseEnter={()=>setEnter()} onMouseLeave={()=>setExit()} className={`navBar border-black pointer-events-auto absolute w-[100vw] h-auto top-0 right-0 z-[50] py-[16px] text-nav flex justify-end items-end  ${hover?"active border-y border":""}`}>
                     <div className="w-[132px]">
                         <Link href="/info/manifesto"><div  className="pl-[10px] mb-[4px] py-[4px]  navItem">Manifesto</div></Link>
                         <Link  href="/info/principles"><div  className="pl-[10px] mb-[4px] py-[4px]  navItem">Principles</div></Link>
