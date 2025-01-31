@@ -31,7 +31,7 @@ export default function Application({data,quest}:any) {
                       <a href={`mailto://${data.email}`}>{data.email}</a>
                     </div>
                     <div className="col-span-full lg:col-span-2 py-0 lg:py-[--sm] listResourceTitle relative underline uppercase">
-                          <Prelim quest={quest} answer={JSON.parse(data.answers[0].answer)}/>
+                          <Prelim name={`${data.firstName}-${data.lastName}`} quest={quest} answer={JSON.parse(data.answers[0].answer)}/>
                     </div>
                     
                     <div className=" col-span-1 col-end-13 flex flex-end text-right">{active?(
