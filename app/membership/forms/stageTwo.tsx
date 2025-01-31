@@ -4,14 +4,17 @@ import { Reveal } from "@/app/lib/util/reveal";
 import {InputContext} from '../signup'
 import addDoc, { delData } from "@/app/lib/util/sanity";
 import { v4 as uuidv4 } from 'uuid';
+import { getData } from "@/app/lib/util/sanity";
 
 
 
 
 
 export default function StageTwo() {
+
   const contextInput = useContext<any>(InputContext);
   const [isLoading, setIsLoading] = useState<boolean>(false)
+ 
 
 
   const submitForm=(e:FormEvent<HTMLFormElement>)=>{
@@ -24,19 +27,20 @@ export default function StageTwo() {
    newDoc.firstName = formData.get('firstName')
    newDoc.lastName = formData.get('lastName')
    newDoc.email = formData.get('email')
+   newDoc.status = 'pending'
    newDoc.website = formData.get('website')
   
    contextInput.answers.map((item:any,i:number)=>{
     const curr: any = {}
-    curr.quest = i
+    curr.quest = contextInput.quest[i]
     curr.answer = JSON.stringify(item)
     curr._key = uuidv4()
+    if(curr.quest!=="break" && curr.quest!==null){
     newAnwsers.push(curr)
+    }
 
    })
    newDoc.answers = newAnwsers
-   console.log('submit',newDoc)
-   delData('application')
     addDoc(newDoc).then(contextInput.sendSuccess(newDoc) )
 
   }

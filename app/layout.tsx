@@ -29,6 +29,8 @@ export default function RootLayout({
       setPhase(1)
     }else if(pageID.includes('contact')){
       setPhase(1)
+    }else if(pageID.includes('applications')){
+      setPhase(1)
     }else{
       setPhase(0)
     }

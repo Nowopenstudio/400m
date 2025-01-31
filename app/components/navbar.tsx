@@ -53,7 +53,7 @@ export default function Navbar({phase, setPhase}:any){
                                         <div className='mb-[20px]'>Membership</div>
                                         <Link  onClick={()=>closeMenu()} href="/membership/productions"><div  className="pl-[10px] mb-[4px] py-[10px]  navItem">Productions</div></Link>
                                         <Link  onClick={()=>closeMenu()} href="/membership/d-d"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">D+D</div></Link>
-                                        <Link  onClick={()=>closeMenu()} href="/membership/jobs"><div  className="pl-[10px] mb-[60px] py-[4px]  navItem">Jobs</div></Link>
+                                        <Link  onClick={()=>closeMenu()} href="/membership/openings"><div  className="pl-[10px] mb-[60px] py-[4px]  navItem">openings</div></Link>
                                       
                                            
                                          <Link onClick={()=>closeMenu()} href="/contact">contact</Link>
@@ -82,7 +82,7 @@ export default function Navbar({phase, setPhase}:any){
                         <div className="w-[132px]">
                         <Link  href="/membership/productions"><div  className="pl-[10px] mb-[4px] py-[4px]  navItem">Productions</div></Link>
                         <Link  href="/membership/d-d"><div  className="pl-[10px] mb-[4px] py-[4px]  navItem">D+D</div></Link>
-                        <Link  href="/membership/jobs"><div  className="pl-[10px] mb-[30px] py-[4px]  navItem">Jobs</div></Link>
+                        <Link  href="/membership/openings"><div  className="pl-[10px] mb-[30px] py-[4px]  navItem">Openings</div></Link>
                         <div>Membership</div>
                             </div>
                         <div className="w-[120px] ml-[30px] text-right pr-[16px]"><Link href="/contact">contact</Link></div>

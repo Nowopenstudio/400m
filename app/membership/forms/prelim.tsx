@@ -25,7 +25,7 @@ export default function Prelim({form}:any) {
     preSet[`toggle${curr}`] = true
     e.currentTarget.classList.add('active')
   }
-    contextInput.activeChange(preSet)
+    contextInput.activeChange("preSet", preSet)
     setPre(preSet)
   }
 

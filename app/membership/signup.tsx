@@ -8,6 +8,7 @@ import StageTwo from "./forms/stageTwo";
 import { sendEmail } from "../lib/util/sanity";
 import { PortableText } from "next-sanity";
 import Caution from "./forms/caution";
+import TextOnly from "./forms/textOnly";
 
 
 export const InputContext = createContext({})
@@ -18,21 +19,27 @@ export default function SignUp({form, contact}:any) {
     const [currPage, setPage] = useState(0)
     const [total, setTotal] = useState(0)
     const [answers,setAnswer] = useState<object>([])
+    const [quest,setQuest] = useState<object>([])
     const [active,setActive] = useState(null)
+    const [activeQ,setActiveQ] = useState(null)
     const [submit, setSubmit] = useState(false)
     const [success, setSuccess] = useState(false)
 
 
  
-    const activeChange =(answer:any)=>{
+    const activeChange =(question:any,answer:any)=>{
         setActive(answer)
+        setActiveQ(question)
     }
 
     const step=(sec:any)=>{
         const curr = currPage + sec
+        const currQuest:any = quest
         const currAnswers:any = answers
         currAnswers[currPage] = active;
+        currQuest[currPage] = activeQ;
         setAnswer(currAnswers)
+        setQuest(currQuest)
         setPage(curr)
         setActive(null)
 
@@ -41,8 +48,20 @@ export default function SignUp({form, contact}:any) {
     
 
     useEffect(()=>{
-        const count = 2+(form[0].section[1].single.length)+(form[0].section[2].single.length)
+        var count = 2
 
+        form[0].section.map((item:any, i:number)=>{
+            if( i > 0){
+                if(item.single){
+                 count = count + item.single.length
+                }else{
+                    count++
+                }
+              }
+              
+        })
+        
+        
         setTotal(count)
     }, [])
 
@@ -67,30 +86,40 @@ export default function SignUp({form, contact}:any) {
         ):(
             <div className=" w-full grid-cols-12 grid mt-[20px]">
             {submit?(
-                  <InputContext.Provider value={{ activeChange, currPage, answers, submitToggle, sendSuccess }}>
+                  <InputContext.Provider value={{ activeChange, currPage, answers, quest,submitToggle, sendSuccess }}>
             <StageTwo /></InputContext.Provider>
             ):('')}
           
   
        <div className="col-span-full pb-[60px]">
-            {currPage < 1?(
+            {currPage == 0?(
                       <InputContext.Provider value={{ activeChange, currPage, answers }}>
                       <Caution form={form[0].disclaim}/></InputContext.Provider>
-            ):(
-                 currPage == 1?(
-                    <InputContext.Provider value={{ activeChange, currPage, answers }}>
-                      <Prelim form={form[0].section[0]}/></InputContext.Provider>
-                ):(
-                    currPage < (form[0].section[1].single.length+2)?(
-                        <InputContext.Provider value={{ activeChange, currPage, answers }}>
-                        <StageOne single={form[0].section[1].single[currPage - 2]}/>  </InputContext.Provider>
-                  ):(
-                    <InputContext.Provider value={{ activeChange, currPage, answers }}>
-                    <StageOne single={form[0].section[2].single[currPage - (2+form[0].section[1].single.length)]}/>    </InputContext.Provider>
-                  )
+            ):('')}
+            {currPage == 1?(
+            <InputContext.Provider value={{ activeChange, currPage, answers }}>
+                <Prelim form={form[0].section[0]}/></InputContext.Provider>
+        ):('')}
+                   {currPage == 2?(
+           <InputContext.Provider value={{ activeChange, currPage, answers }}>
+            <TextOnly copy={form[0].section[1]}/> </InputContext.Provider>
+        ):('')}
+                
+            
+        {currPage > 2?(
+            currPage < (form[0].section[2].single.length+3)?(
+                <InputContext.Provider value={{ activeChange, currPage, answers }}>
+                <StageOne single={form[0].section[2].single[currPage - 3]}/>  </InputContext.Provider>
+          ):(
+            
+                <InputContext.Provider value={{ activeChange, currPage, answers }}>
+                <StageOne single={form[0].section[3].single[currPage - (3+form[0].section[2].single.length)]}/></InputContext.Provider>
+            
+           
+          )
+        ):('')}
     
-                )
-            )}
+    
 
     
         </div>

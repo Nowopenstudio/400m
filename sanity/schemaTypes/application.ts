@@ -14,18 +14,30 @@ export default{
                 title:'Last Name',
             },
             {
+                name:'status',
+                type:'string',
+                title:'Status',
+                options:{
+                    list: [
+                        { "title": "Pending", "value": "pending"},
+                        { "title": "Selected", "value": "select"},
+                        { "title": "Trial", "value": "trial"},
+                        { "title": "Creative Member", "value": "creative"},
+                        { "title": "Aspiring Worker Member", "value": "aspiring"},
+                      
+                        
+                      ]
+                }
+            },
+            {
                 type:"string",
                 name:"email",
-                title:'Email',
-                validation: Rule => Rule.unique()
+                title:'Email'
             },
             {
                 type:"url",
                 name:"website",
                 title:'Website',
-                validation: Rule => Rule.uri({
-                    scheme: ['http', 'https']
-                  })
             
     },
     {
@@ -37,16 +49,24 @@ export default{
             name:'single',
             title: "Single",
             fields:[
-                {type:'string',
+                {type:'array',
                     name:"quest",
-                    title:"Question"
+                    title:"Question",
+                    of:[{type:"block"}]
                 },
-                {type:'string',
+                {type:'text',
                     name:"answer",
                     title:"Answer"
                 }
             ]
         }]
     }
-    ]
+    ],
+    preview: {
+        select: {
+          title: 'firstName',
+          subtitle:'lastName'
+        }
+      }
+
 }

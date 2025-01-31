@@ -19,6 +19,40 @@ export const myStructure = (S:any) =>
         S.listItem()
           .title('Forms')
           .child(S.document().title('Forms').schemaType('form').documentId('form')),
+        S.listItem()
+          .title('Application')
+          .child(
+            S.list().title('Status').items([
+              S.listItem().title('Pending').child(
+                S.documentTypeList('application')
+                .title('Pending')
+                .filter('_type == "application" && status == "pending"')
+              ),
+              S.listItem().title('Selected').child(
+                S.documentTypeList('application')
+                .title('Selected')
+                .filter('_type == "application" && status == "select"')
+              ),
+              S.listItem().title('Trial Period').child(
+                S.documentTypeList('application')
+                .title('Trial Period')
+                .filter('_type == "application" && status == "trial"')
+              ),
+              S.listItem().title('Creative Member').child(
+                S.documentTypeList('application')
+                .title('Creative Member')
+                .filter('_type == "application" && status == "creative"')
+              ),
+              S.listItem().title('Aspiring Worker-Member').child(
+                S.documentTypeList('application')
+                .title('Aspiring Worker-Member')
+                .filter('_type == "application" && status == "aspiring"')
+              )]
+             
+            )
+              
+         
+          ),
         S.divider(),
         S.listItem()
           .title('Departments')
@@ -28,7 +62,7 @@ export const myStructure = (S:any) =>
           .child(S.document().title('Settings').schemaType('settings').documentId('settings')),
          
   
-          ...S.documentTypeListItems().filter(listItem => !['info','department','project','form','settings','structure','jobs'].includes(listItem.getId())),
+          ...S.documentTypeListItems().filter(listItem => !['application', 'info','department','project','form','settings','structure','jobs'].includes(listItem.getId())),
   
   
     

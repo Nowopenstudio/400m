@@ -9,25 +9,24 @@ import Link from "next/link";
 
 
 
-export default function StageOne({single}:any) {
+export default function TextOnly({copy}:any) {
   const contextInput = useContext<any>(InputContext);
 
   
   useEffect(()=>{
-    if(contextInput.answers[contextInput.currPage]){
-      contextInput.activeChange(single.content,single.content,contextInput.answers[contextInput.currPage])
-    }
-  },[contextInput.currPage])
+ 
+      contextInput.activeChange("break",'break')
+  },[])
 
 
   return (
             <Reveal styleSet="w-full grid grid-cols-12"  key={`text-${contextInput.currPage}`} >      
              
              <div className="pt-[--bar] col-start-2 col-span-10 md:col-start-3 md:col-span-8 md:grid-cols-2 xl:col-start-4 xl:col-span-6 grid grid-cols-2 gap-[20px]">
-           
+                  
                   <div  className=" py-[10px] col-span-2 mb-[60px]">
-                    <PortableText value={single.content}/>
-                    <textarea onChange={(e)=> contextInput.activeChange(single.content,e.target.value) } className="mt-[20px] border border-[--black] w-full rounded-[10px] p-[20px] min-h-[150px]" placeholder="..." defaultValue={contextInput.answers[contextInput.currPage]?(contextInput.answers[contextInput.currPage]):""}></textarea>
+                    <PortableText value={copy.intro}/>
+                    
                   </div>
                
              </div>

@@ -78,7 +78,7 @@ export const sendEmail= (async (profile:any,form:any,contact:any)=>{
             name: profile.firstName,
             subject:form.emailSub,
             message:form.emailer,
-            sender:'ro@nowopen.studio'
+            sender:contact
           }),
         });
   

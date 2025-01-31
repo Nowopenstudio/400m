@@ -9,6 +9,7 @@
   --black: #282828;
   --white: #ffffff;
   --sm:16px;
+  --med:32px;
 }
 
 /* font embeds */
@@ -217,6 +218,27 @@ textarea:focus{
   opacity: 1;
 }
 
+/* profile */
+.resourceLinks{
+  height:auto;
+  max-height: 0;
+  transition: max-height .25s ease-in;
+}
+
+.resourceLinks.active{
+  max-height: 9000px;
+}
+
+.dot{
+  background-color: #e4e4e4;
+}
+.dot.active{
+  background-color: var(--black);
+}
+
+.prelimHold:hover .prelimAnswer{
+  opacity: 1;
+}
 
 @media (max-width: 900px) {
   h1{font-size:1.25rem;line-height: 1.15em;}

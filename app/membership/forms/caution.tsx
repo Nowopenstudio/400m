@@ -27,7 +27,7 @@ export default function Caution({form}:any) {
     const count = total+1
     setTotal(count)
     if(total+1 >= 2){
-      contextInput.activeChange({})
+      contextInput.activeChange('break',{})
     }
     
   }
