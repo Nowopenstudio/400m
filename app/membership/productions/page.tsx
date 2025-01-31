@@ -42,16 +42,14 @@ export default async function Home() {
                         
               </div>
               {preface?(
-                <div className="col-span-full"> <Image alt="image" height={0}  width={0} sizes="100vw" src={preface.imageURL}  className="w-full object-fill"/></div>
+                preface.imageURL?(
+                  <div className="col-span-full"> <Image alt="image" height={0}  width={0} sizes="100vw" src={preface.imageURL}  className="w-full object-fill"/></div>
+                ):('')
               ):('')}
              
             </div>
           </div>
-          // new
-        
- 
-    
-  
+
 
   );
 }
