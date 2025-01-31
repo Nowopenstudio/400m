@@ -10,6 +10,8 @@ import SmoothScrolling from "./components/SmoothScrolling";
 
 
 
+
+
 export default function RootLayout({
   children
 }: Readonly<{
@@ -51,3 +53,6 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+

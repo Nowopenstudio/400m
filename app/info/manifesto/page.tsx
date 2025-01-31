@@ -25,10 +25,22 @@ export default async function Home() {
                   ):('')}
                    </div>
               </Reveal>
-        
- 
-    
-  
+
 
   );
+}
+
+export async function generateMetadata() {
+
+  const query = await getData(`{
+    'data':*[_type=='settings'][0]{meta{title,description,"image":image.asset->url}}
+ }`)
+ const {data} = query.data  
+  return {
+    title: 'Manifesto | 400M',
+    openGraph: {
+          images: data.meta.image
+        },
+    description:data.meta.description
+  };
 }

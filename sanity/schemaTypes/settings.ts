@@ -61,6 +61,28 @@ export default{
             ]
         }]
 
+     },
+     {
+        name:'meta',
+        type:'object',
+        title:'meta',
+        fields:[
+            {
+                name:'title',
+                type:'string',
+                title:'Title'
+        },
+        {
+            name:'description',
+            type:'text',
+            title:'description'
+        },
+        {
+            name:'image',
+            type:'image',
+            title:'Image'
+        }
+    ]
      }
     ]
 }

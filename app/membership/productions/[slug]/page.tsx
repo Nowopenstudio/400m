@@ -58,3 +58,19 @@ export default async function Home(params:any) {
 
   );
 }
+
+export async function generateMetadata(params:any) {
+
+  const query = await getData(`{
+    'project':*[_type=="project" && slug.current == '${params.params.slug}'][0]{title,desc, slug,"work":content[]{desc,"imageUrl":image.asset->url}},
+    'data':*[_type=='settings'][0]{meta{title,description,"image":image.asset->url}}
+ }`)
+ const {data,project} = query.data  
+  return {
+    title: `${project.title} | 400M: Productions`,
+    openGraph: {
+          images: data.meta.image
+        },
+    description:data.meta.description
+  };
+}

@@ -42,6 +42,7 @@ export default function SignUp({form, contact}:any) {
         setQuest(currQuest)
         setPage(curr)
         setActive(null)
+        scrollTo(0,0)
 
     }
 
