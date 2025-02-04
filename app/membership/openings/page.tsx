@@ -31,7 +31,7 @@ export async function generateMetadata() {
  }`)
  const {data} = query.data  
   return {
-    title: 'Co-Op Openings | 400M',
+    title: 'Co-op Openings | 400M',
     openGraph: {
           images: data.meta.image
         },
