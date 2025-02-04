@@ -3,11 +3,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/navbar";
-import {getData} from "./lib/util/sanity";
 import { useState,useEffect } from "react";
 import { usePathname } from 'next/navigation';
 import SmoothScrolling from "./components/SmoothScrolling";
 
+
+const metadata: Metadata = {
+  title: {
+    template: '%s | 400m',
+    default: '400m',
+  },
+};
 
 
 
