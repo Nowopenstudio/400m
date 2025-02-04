@@ -15,7 +15,7 @@ export default function Prelim({quest,answer,name}:any) {
   return (
    
        
-           <div className="flex w-full h-full justify-between relative prelimHold">
+           <div className="flex w-full h-full justify-between relative prelimHold py-[--sm]">
               {quest.map((item:any,i:number)=>{
                   return(
                     <div key={`${name}-fullquest-${i}`} className={`dot w-[10px] h-[10px] rounded toggle${i} ${answer[`toggle${i}`]?"active":""}`}></div>
