@@ -1,4 +1,4 @@
-import { getData } from "../lib/util/sanity";
+import { getData } from "../../lib/util/sanity";
 import { PortableText } from "next-sanity";
 import Application from "./application";
 

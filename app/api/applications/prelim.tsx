@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Reveal } from "../lib/util/reveal";
+import { Reveal } from "../../lib/util/reveal";
 import { PortableText } from "next-sanity";
 
 

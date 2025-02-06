@@ -2,7 +2,7 @@
 
 import React, { useState,FormEvent } from "react";
 import Link from "next/link";
-import { Reveal } from "../lib/util/reveal";
+import { Reveal } from "../../lib/util/reveal";
 import { PortableText } from "next-sanity";
 import Prelim from "./prelim";
 
@@ -28,7 +28,7 @@ export default function Application({data,quest}:any) {
 
   return (
    <React.Fragment>
-          {!access?(
+          {/* {!access?(
             <div className="grid w-full grid-cols-12 items-center justify-center grid-rows-3 ">
               <div className="col-start-1 col-span-12 px-[20px] sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 grid-cols-2 grid row-start-2">
               <div className="text-nav uppercase col-span-full mb-[20px] text-center">Please Provide Access Code </div>
@@ -85,9 +85,9 @@ export default function Application({data,quest}:any) {
           
         </Reveal>
           )}
-                    
+                     */}
   
-  
+                <div> 404</div>
           
    </React.Fragment>
       
