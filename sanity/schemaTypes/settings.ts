@@ -63,6 +63,11 @@ export default{
 
      },
      {
+        name:'code',
+        type:'file',
+        title:"Code of Conduct"
+     },
+     {
         name:'meta',
         type:'object',
         title:'meta',

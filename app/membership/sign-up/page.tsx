@@ -5,7 +5,7 @@ import SignUp from "../signup";
 
 export default async function Home() {
   const query = await getData(`{
-    'settings':*[_type=="settings"]{contacts},
+    'settings':*[_type=="settings"]{contacts,"code":code.asset->url,"og":code.asset->originalFilename},
     'form':*[_type=="form"]{disclaim, section,appSuccess, emailSub, emailer }
     }`)
 
@@ -18,7 +18,7 @@ export default async function Home() {
 
       
             
-    <SignUp form={form} contact={settings[0].contacts[0].email}/>
+    <SignUp form={form} contact={settings[0].contacts[0].email} settings={settings[0]}/>
         
  
     

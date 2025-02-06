@@ -15,7 +15,7 @@ export const InputContext = createContext({})
 
 
 
-export default function SignUp({form, contact}:any) {
+export default function SignUp({form, contact, settings}:any) {
     const [currPage, setPage] = useState(0)
     const [total, setTotal] = useState(0)
     const [answers,setAnswer] = useState<object>([])
@@ -95,7 +95,7 @@ export default function SignUp({form, contact}:any) {
        <div className="col-span-full pb-[60px]">
             {currPage == 0?(
                       <InputContext.Provider value={{ activeChange, currPage, answers }}>
-                      <Caution form={form[0].disclaim}/></InputContext.Provider>
+                      <Caution form={form[0].disclaim} settings={settings}/></InputContext.Provider>
             ):('')}
             {currPage == 1?(
             <InputContext.Provider value={{ activeChange, currPage, answers }}>
