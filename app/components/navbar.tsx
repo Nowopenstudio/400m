@@ -37,7 +37,7 @@ export default function Navbar({phase, setPhase}:any){
     
     return(
         <div className={` uppercase w-[100vw] h-[100vh] fixed z-[50]  overflow-hidden phase-${phase} pointer-events-none`}>
-           <Link onClick={() => setPhase(1)} className="z-[51] relative w-full h-full" href="/info/manifesto"> <div className={`nav-item nav-one w-full`}> <div className={`h-[var(--bar)] w-[--bar]  py-[8px] px-[8px]`}><Logo className="logo absolute top-0 left-0 pointer-events-auto z-[52]" fill={`#232323`} width={30} height={30} /> </div></div></Link>
+           <Link onClick={() => setPhase(1)} className="z-[51] relative w-[100vw] h-[100vh]" href="/info/manifesto"> <div className={`nav-item nav-one w-full`}> <div className={`h-[var(--bar)] w-[--bar] py-[8px] px-[8px]`}><Logo className="logo absolute top-0 left-0 pointer-events-auto z-[52]" fill={`#232323`} width={30} height={30} /> </div></div></Link>
            {phase==1?(
     
                       mobile?(

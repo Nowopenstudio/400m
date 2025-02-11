@@ -153,8 +153,8 @@ textarea:focus{
 }
 
 .phase-0 .logo{
-  top:50%;
-  left:50%;
+  top:50vh;
+  left:50vw;
   transform: translate(-50%,-50%) scale(8.0);
 
 }

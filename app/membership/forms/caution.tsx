@@ -41,7 +41,7 @@ export default function Caution({form, settings}:any) {
                     <PortableText value={form.intro}/>
                    <div className={`px-[20px]  uppercase text-nav`}>Disclaimer</div>
                   </div>
-            <div className="px-[--med] mt-[--sm] md:px-0 col-span-12 col-start-1 md:col-span-8 md:col-start-2 xl:col-span-4 xl:col-start-5 mb-[10px] grid grid-cols-2 gap-0 md:gap-[--sm]">
+            <div className="px-[--med] mt-[--sm] md:px-0 col-span-12 col-start-1 md:col-span-8 md:col-start-3 xl:col-span-4 xl:col-start-5 mb-[10px] grid grid-cols-2 gap-0 md:gap-[--sm]">
             <Link scroll={true} href={`/info/manifesto`} className="px-[--med] mt-[--sm] md:px-0 col-span-2 col-start-1 md:col-span-1 ">
               <div className={` text-black uppercase text-center text-nav  py-[10px] bg-gray-100 rounded-full`}>View Manifesto</div>
                </Link>
