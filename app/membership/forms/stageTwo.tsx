@@ -53,10 +53,10 @@ export default function StageTwo() {
          
               <div onClick={()=> contextInput.submitToggle()} className={`${isLoading?"opacity-[.25] pointer-events-none":""} col-span-12 xl:col-span-3 col-start-1 grid grid-cols-1 items-center text-nav uppercase text-center bg-white xl:bg-none mt-[--bar]`}>Back</div>
                 <form onSubmit={submitForm}className={` px-[20px] bg-white col-start-1 col-span-12 md:col-start-3 md:col-span-8 md:grid-cols-2 xl:col-start-4 xl:col-span-6 grid grid-cols-2 gap-[20px] border-0 xl:border-[--black] xl:border`}>
-                    <input type="text" name="firstName" className="px-[20px] rounded-full col-span-1 border border-[--black] text-nav p-[10px] uppercase" placeholder="First name" required></input>
-                    <input type="text" name="lastName" className="px-[20px] rounded-full col-span-1 border border-[--black] text-nav p-[10px] uppercase" placeholder="Last name" required></input>
-                    <input type="email" name="email" className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase" placeholder="email" required></input>
-                    <input type="url" name="website" className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase" placeholder="Website"></input>
+                    <input type="text" name="firstName" className="px-[20px] rounded-full col-span-1 border border-[--black] text-nav p-[10px] " placeholder="FIRST NAME" required></input>
+                    <input type="text" name="lastName" className="px-[20px] rounded-full col-span-1 border border-[--black] text-nav p-[10px] " placeholder="LAST NAME" required></input>
+                    <input type="email" name="email" className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] " placeholder="EMAIL" required></input>
+                    <input type="url" name="website" className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] " placeholder="WEBSITE"></input>
                     <button type="submit"className="px-[20px] rounded-full col-span-2 border border-[--black] text-nav p-[10px] uppercase text-center bg-[--black] text-white "> Submit </button>
                 </form>
                 <div onClick={()=> contextInput.submitToggle()} className={`${isLoading?"opacity-[.25] pointer-events-none":""} col-span-12 xl:col-span-3 col-start-1 xl:col-start-10  grid-cols-1 items-center text-nav uppercase text-center text-white xl:text-black grid bg-white xl:bg-transparent`}>Back</div>
