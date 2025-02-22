@@ -9,8 +9,10 @@ export default async function Home() {
     'form':*[_type=="form"]{disclaim, section,appSuccess, emailSub, emailer }
     }`)
 
-  const {form, settings} = query.data
+    
 
+  const {form, settings} = query.data
+console.log(settings[0].contacts[0].email)
 
   return (
    
