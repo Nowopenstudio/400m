@@ -66,7 +66,6 @@ export const delData = (async (query:any) =>{
 
 
 export const sendEmail= (async (profile:any,form:any,contact:any)=>{
-    console.log("step1",profile)
     try{
         const response = await fetch("/api/send", {
           method: "POST",

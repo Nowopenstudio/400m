@@ -9,7 +9,6 @@ export default async function Home() {
 
   const {form,settings} = query.data
 
-  console.log(settings[0])
 
 
   return (
