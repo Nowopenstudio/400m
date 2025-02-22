@@ -9,6 +9,7 @@ export async function POST(req: NextRequest, res:NextResponse) {
     const { name, email, subject, message, sender  } = body;
 
   try {
+    console.log(sender)
     const { data, error } = await resend.emails.send({
       from: sender,
       to: email,
