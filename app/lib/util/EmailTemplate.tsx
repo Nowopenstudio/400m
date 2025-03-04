@@ -11,6 +11,6 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
 }) => (
   <div>
     <h1 className="uppercase">Thank You, {firstName}!</h1>
-    <p>{message}</p>
+    <div style={{whiteSpace: "pre-wrap"}}>{message}</div>
   </div>
 );

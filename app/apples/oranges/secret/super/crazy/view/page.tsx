@@ -1,4 +1,4 @@
-import { getData } from "../../lib/util/sanity";
+import { getData } from "../../../../../../lib/util/sanity";
 import { PortableText } from "next-sanity";
 import Application from "./application";
 
@@ -16,11 +16,9 @@ export default async function Home() {
     
 
         <main className="w-full min-h-[100vh] pt-[calc(var(--bar)*2)] pb-[200px] overflow-x-hidden">
-            {data.map((item:any,i:number)=>{
-              return(
-                <Application data={item} quest={form.section[0].single} key={`profile-${i}`}/>
-              )
-            })}
+          
+                <Application data={data} quest={form.section[0].single}/>
+        
          </main>
  
     

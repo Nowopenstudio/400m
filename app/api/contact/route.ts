@@ -9,7 +9,7 @@ export async function POST(req: NextRequest, res:NextResponse) {
     const { name, email, subject, message, sender  } = body;
   try {
     const { data, error } = await resend.emails.send({
-      from: sender,
+      from: email,
       to: email,
       subject: subject,
       react: ContactTemplate({ firstName: name, message:message, email:email }),

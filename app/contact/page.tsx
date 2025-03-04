@@ -8,7 +8,7 @@ export default async function Home() {
   'form':*[_type=="form"]{contactSuccess}}`)
 
   const {form,settings} = query.data
-
+console.log(settings.contacts[0].email)
 
 
   return (

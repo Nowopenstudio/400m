@@ -29,7 +29,10 @@ export default function RootLayout({
 
 
   useEffect(()=>{
-    if(pageID.includes('info')){
+    if(pageID.includes('apples')){
+      setPhase(1)
+    }
+    else if(pageID.includes('info')){
       setPhase(1)
     }else if(pageID.includes('structure')){
       setPhase(1)

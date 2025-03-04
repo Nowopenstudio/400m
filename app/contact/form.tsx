@@ -10,7 +10,6 @@ import { Reveal } from "../lib/util/reveal";
 export default function Form({form, settings}:any) {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [success, setSuccess] = useState<boolean>(false)
-  console.log(form)
 
   const submitForm=(e:FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
@@ -19,10 +18,10 @@ export default function Form({form, settings}:any) {
     const newEmail:any  = {}
 
    newEmail.name = formData.get('name')
-   newEmail.email = formData.get('email')
+   newEmail.email = settings
    newEmail.subject = formData.get('subject')
    newEmail.message = formData.get('message')
-   newEmail.contact = settings
+   newEmail.contact = formData.get('email')
 
    sendContact(newEmail)
    setSuccess(true)
