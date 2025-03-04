@@ -51,7 +51,7 @@ export default function Single({item,quest}:any) {
                                 <div className="w-full mb-[50px]" key={`answer-${dots.firstName}-${d}`}>
                                 <div className="w-full md:w-3/4 font-bold mb-0"><PortableText value={dots.quest}/></div>
                                 <div className="w-full md:w-3/4">
-                                  <p>{dots.answer}</p>
+                                  <p>{`${JSON.parse(dots.answer)}`}</p>
                                 </div>
                                </div>
                                ):('')
