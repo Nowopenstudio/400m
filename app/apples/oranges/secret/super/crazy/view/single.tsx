@@ -24,14 +24,14 @@ export default function Single({item,quest}:any) {
                     <div onClick={()=>setActive(!active)}  className=" col-span-full lg:col-span-3 py-[--sm] lg:py-[--sm] profileName  font-bold">
                       <p>{`${item.firstName} ${item.lastName}`}</p>
                     </div>
-                    <div className="col-span-full lg:col-span-3 lg:py-[--sm] listResourceTitle relative underline uppercase text-sm">
+                    <div className="col-span-full mb-[--med] lg:mb-[0] lg:col-span-3 lg:py-[--sm] listResourceTitle relative underline uppercase text-sm">
                       {item.website?(
                          <a target='_blank' href={item.website}>website</a>
                       ):('')}
                      
                     </div>
     
-                    <div className="col-span-full lg:col-span-3 py-0 lg:py-[--sm] listResourceTitle relative underline uppercase text-sm">
+                    <div className="col-span-full mb-[--med] lg:mb-[0] lg:col-span-3 py-0 lg:py-[--sm] listResourceTitle relative underline uppercase text-sm">
                       <a href={`mailto://${item.email}`}>{item.email}</a>
                     </div>
                     <div className="col-span-full lg:col-span-2 py-0 lg:py-[--sm] listResourceTitle relative underline uppercase">
