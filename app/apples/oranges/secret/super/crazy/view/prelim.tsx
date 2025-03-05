@@ -15,14 +15,14 @@ export default function Prelim({quest,answer,name}:any) {
   return (
    
        
-           <div className="flex w-full h-full justify-between relative prelimHold py-[--sm]">
+           <div onClick={()=>setActive(!active)} className="flex w-full h-full justify-between relative prelimHold py-[--sm]">
               {quest.map((item:any,i:number)=>{
                   return(
                     <div key={`${name}-fullquest-${i}`} className={`dot w-[10px] h-[10px] rounded toggle${i} ${answer[`toggle${i}`]?"active":""}`}></div>
                   )
               })}
 
-    <div className="absolute top-0 z-10 rounded-sm border-black border bg-white p-[--sm] opacity-0 prelimAnswer pointer-events-none">
+    <div className={`${active?"active":""} absolute top-0 z-10 rounded-sm border-black border bg-white p-[--sm] opacity-0 prelimAnswer pointer-events-none`}>
           {quest.map((item:any,i:number)=>{
                     return(
                       <div className={` text-sm leading-[1.3rem] toggle${i} ${answer[`toggle${i}`]?"":"opacity-[.2]"}`} key={`${name}quest-${i}`}>

@@ -236,9 +236,6 @@ textarea:focus{
   background-color: var(--black);
 }
 
-.prelimHold:hover .prelimAnswer{
-  opacity: 1;
-}
 
 @media (max-width: 900px) {
   h1{font-size:1.25rem;line-height: 1.15em;}

@@ -20,13 +20,13 @@ export default function Single({item,quest}:any) {
                 <Reveal styleSet="resourceItem w-full cursor-pointer border-y border-black relative">
              
                 <div  className={`w-full relative border-[--blue]  text-[--blue] px-[--sm]`}>
-                  <div onClick={()=>setActive(!active)} className={` w-full grid grid-cols-12 items-center listResource ${active?"active":""}`}>
-                    <div className=" col-span-full lg:col-span-3 py-[--sm] lg:py-[--sm] profileName  font-bold">
+                  <div className={` w-full grid grid-cols-12 items-center listResource ${active?"active":""}`}>
+                    <div onClick={()=>setActive(!active)}  className=" col-span-full lg:col-span-3 py-[--sm] lg:py-[--sm] profileName  font-bold">
                       <p>{`${item.firstName} ${item.lastName}`}</p>
                     </div>
                     <div className="col-span-full lg:col-span-3 lg:py-[--sm] listResourceTitle relative underline uppercase text-sm">
                       {item.website?(
-                         <a href={item.website}>website</a>
+                         <a target='_blank' href={item.website}>website</a>
                       ):('')}
                      
                     </div>
@@ -38,7 +38,7 @@ export default function Single({item,quest}:any) {
                           <Prelim name={`${item.firstName}-${item.lastName}`} quest={quest} answer={JSON.parse(item.answers[0].answer)}/>
                     </div>
                     
-                    <div className=" col-span-1 col-end-13 flex flex-end text-right right-[--sm] top-[--sm] lg:top-0 absolute lg:relative items-center">{active?(
+                    <div onClick={()=>setActive(!active)}  className=" col-span-1 col-end-13 flex flex-end text-right right-[--sm] top-[--sm] lg:top-0 absolute lg:relative items-center">{active?(
                       <h1 className="w-full inline-block mb-0">-</h1>
                     ):(
                      <h1 className="w-full inline-block mb-0">+</h1>
