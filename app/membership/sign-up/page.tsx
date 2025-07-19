@@ -35,7 +35,7 @@ export async function generateMetadata() {
  }`)
  const {data} = query.data  
   return {
-    title: 'Membership Sign-Up | 400M',
+    title: 'Apply to 400M',
     openGraph: {
           images: data.meta.image
         },
