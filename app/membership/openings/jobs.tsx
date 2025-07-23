@@ -31,7 +31,7 @@ export default function Jobs({sections}:any) {
        
           <h1>{item.title}</h1>
           <PortableText value={item.text}/>
-          <Link href="/membership/sign-up" className={`border-[--black] w-full py-[8px] bottom-[--bar] grid grid-cols-12 md:px-0`}><div className={`border-[--black] col-span-12 col-start-1 py-[10px] uppercase relative border  text-nav text-center rounded-full pointer-events-auto bg-[--black]  text-white`} > Apply to 400m</div></Link>
+          <Link href="/membership/apply" className={`border-[--black] w-full py-[8px] bottom-[--bar] grid grid-cols-12 md:px-0`}><div className={`border-[--black] col-span-12 col-start-1 py-[10px] uppercase relative border  text-nav text-center rounded-full pointer-events-auto bg-[--black]  text-white`} > Apply to 400m </div></Link>
           </div>
 
 
