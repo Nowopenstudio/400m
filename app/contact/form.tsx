@@ -21,7 +21,7 @@ export default function Form({form, settings}:any) {
    newEmail.email = settings
    newEmail.subject = formData.get('subject')
    newEmail.message = formData.get('message')
-   newEmail.contact = formData.get('email')
+   newEmail.sender = formData.get('email')
 
    sendContact(newEmail)
    setSuccess(true)

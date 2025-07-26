@@ -107,7 +107,7 @@ export const sendContact= (async (message:any)=>{
           name: message.name,
           subject:message.subject,
           message:message.message,
-          sender:message.contact
+          sender:message.sender
         }),
       });
 
