@@ -13,6 +13,7 @@ export const ContactTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   <div>
     <h1 className="uppercase">New Message from, {firstName}:</h1>
     <p>{message}</p>
-    <p>email: {email}</p>
+    <p>Name: {firstName}</p>
+    <p>Email: {email}</p>
   </div>
 );
