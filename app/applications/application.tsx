@@ -9,7 +9,7 @@ import Single from "./single";
 
 
 
-export default function Application({data,quest}:any) {
+export default function Application({data,quest,pass}:any) {
   const [active, setActive] = useState<boolean>(false)
   const [access, setAccess] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -20,7 +20,7 @@ export default function Application({data,quest}:any) {
     const formData = new FormData(e.currentTarget);
 
 
-    (formData.get('accessCode') == "vukta9-wijrob-rojZot")?setAccess(true):undefined
+    (formData.get('accessCode') == pass)?setAccess(true):undefined
    
 
   }

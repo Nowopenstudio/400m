@@ -67,6 +67,7 @@ export default{
         type:'file',
         title:"Code of Conduct"
      },
+    { name: 'password', title: "Password", type: 'string' },
      {
         name:'meta',
         type:'object',
