@@ -226,7 +226,7 @@ textarea:focus{
 }
 
 .resourceLinks.active{
-  max-height: 9000px;
+  max-height: 90000px;
 }
 
 .dot{
