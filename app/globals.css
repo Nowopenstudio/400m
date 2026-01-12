@@ -236,6 +236,11 @@ textarea:focus{
   background-color: var(--black);
 }
 
+.contentBlock iframe{
+  width:100% !important;
+  height:100% !important;
+}
+
 
 @media (max-width: 900px) {
   h1{font-size:1.25rem;line-height: 1.15em;}

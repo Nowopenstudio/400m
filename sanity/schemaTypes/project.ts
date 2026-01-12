@@ -37,6 +37,10 @@ export default{
         type:"array",
         title:'Description',
         of:[{type:"block"}]
+    },{
+        name:'youtube',
+        type:'text',
+        title:'Youtube ID'
     },
     {   name:'content',
         type:'array',

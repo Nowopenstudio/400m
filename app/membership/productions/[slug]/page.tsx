@@ -4,10 +4,11 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { MuxVideoBG } from "@/app/lib/util/muxPlayer";
 import { SwitchContent } from "@/app/lib/util/contentSwitch";
+import React from "react";
 
 export default async function Home(params:any) {
   const query = await getData(`{
-    'project':*[_type=="project" && slug.current == '${params.params.slug}']{"logoUrl":logo.asset->url,title,desc, slug,"work":content[]{desc,"imageUrl":image.asset->url, video{asset->{playbackId}}}, social, status}
+    'project':*[_type=="project" && slug.current == '${params.params.slug}']{"logoUrl":logo.asset->url,title,desc,youtube, slug,"work":content[]{desc,"imageUrl":image.asset->url, video{asset->{playbackId}}}, social, status}
     }`)
 
   const {project} = query.data
@@ -46,7 +47,15 @@ export default async function Home(params:any) {
             <div className="projImg w-full col-span-full">
             {project[0].work.map((img:any,i:any)=>{
                   return(
-                    <SwitchContent work={img} key={`${i}`}title={project[0].title}/>
+                   <React.Fragment key={`${i}`}>
+                    {i==0 && !project[0].youtube?(<SwitchContent work={img}  title={project[0].title}/>):(
+                    <div className="col-span-full contentBlock  relative">
+                      <div className="w-full relative p-[--xs]">
+                        <div className="w-full aspect-video" dangerouslySetInnerHTML={{ __html: project[0].youtube }}></div>
+                        </div>
+                    </div>
+                    )}
+                   </React.Fragment>
                   )
                 })}
             </div>
