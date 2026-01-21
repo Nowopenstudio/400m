@@ -40,55 +40,33 @@ export default function Navbar({phase, setPhase}:any){
            <Link onClick={() => setPhase(1)} className="z-[51] relative w-[100vw] h-[100vh]" href="/info/manifesto"> <div className={`nav-item nav-one w-full`}> <div className={`h-[var(--bar)] w-[--bar] py-[--sm]`}><Logo className="logo absolute top-0 left-0 pointer-events-auto z-[52]" fill={`#232323`} width={30} height={30} /> </div></div></Link>
            {phase==1?(
     
-                      mobile?(
-                        
-                            <div onClick={()=>toggleMenu()} className={`cursor-pointer navBar border-black pointer-events-auto absolute w-[100vw] ${active?"active border-b":""} h-auto top-0 right-0 z-[50] py-[16px] text-nav flex justify-end items-end  flex-wrap`}>
-                                < div className="w-full grid grid-cols-6">
-                                    <div className="col-span-3 col-end-7 justify-end mb-[100px] pt-[100px]">
-                                        <div className='mb-[20px]'>Info</div>
-                                        <Link onClick={()=>closeMenu()} href="/info/manifesto"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">Manifesto</div></Link>
-                                        <Link  onClick={()=>closeMenu()} href="/info/principles"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">Principles</div></Link>
-                                        <Link  onClick={()=>closeMenu()} href="/info/structure"><div  className="pl-[10px] mb-[60px] py-[4px]  navItem">Structure</div></Link>
-                                        
-                                        <div className='mb-[20px]'>Membership</div>
-                                        <Link  onClick={()=>closeMenu()} href="/membership/productions"><div  className="pl-[10px] mb-[4px] py-[10px]  navItem">Productions</div></Link>
-                                        <Link  onClick={()=>closeMenu()} href="/membership/d-d"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">D+D</div></Link>
-                                        <Link  onClick={()=>closeMenu()} href="/membership/openings"><div  className="pl-[10px] mb-[60px] py-[4px]  navItem">openings</div></Link>
-                                      
-                                           
-                                         <Link onClick={()=>closeMenu()} href="/contact">contact</Link>
-                                        </div>
-                                       
-    
-                                    </div>
-                                 <div className="w-full ml-[30px] text-right pr-[16px] mb-100px">
-                                    
-                                    <div>{!active?"menu":"close"}</div>
-                                   
-                                </div>
-
-                               </div> 
-                            
-                                    
-                     
-                      ):(
-                        <div onClick={()=>setExit()} onMouseEnter={()=>setEnter()} onMouseLeave={()=>setExit()} className={`navBar border-black pointer-events-auto absolute w-[100vw] h-auto top-0 right-0 z-[50] py-[16px] text-nav flex justify-end items-end  ${hover?"active border-y border":""}`}>
-                    <div className="w-[132px]">
-                        <Link href="/info/manifesto"><div  className="pl-[10px] mb-[4px] py-[4px]  navItem">Manifesto</div></Link>
-                        <Link  href="/info/principles"><div  className="pl-[10px] mb-[4px] py-[4px]  navItem">Principles</div></Link>
-                        <Link  href="/info/structure"><div  className="pl-[10px] mb-[30px] py-[4px]  navItem">Structure</div></Link>
-                        <div>Info</div>
-                        </div>
-                        <div className="w-[132px]">
-                        <Link  href="/membership/productions"><div  className="pl-[10px] mb-[4px] py-[4px]  navItem">Productions</div></Link>
-                        <Link  href="/membership/d-d"><div  className="pl-[10px] mb-[4px] py-[4px]  navItem">D+D</div></Link>
-                        <Link  href="/membership/openings"><div  className="pl-[10px] mb-[30px] py-[4px]  navItem">Openings</div></Link>
-                        <div>Membership</div>
-                            </div>
-                        <div className="w-[120px] ml-[30px] text-right pr-[--med]"><Link href="/contact">contact</Link></div>
-                </div>
-               )
+    <div onClick={()=>toggleMenu()} className={`cursor-pointer navBar border-black pointer-events-auto absolute w-[100vw] ${active?"active":""} border-b h-auto top-0 right-0 z-[50] py-[16px] text-nav flex justify-end items-end  flex-wrap`}>
+    < div className="w-full grid grid-cols-6">
+        <div className="col-span-2 md:col-span-3 col-end-4 md:col-end-9 justify-end mb-[100px] px-4 pt-[100px]">
+            {/* <div className='mb-[10px]'>Info</div> */}
+            <Link onClick={()=>closeMenu()} href="/info/manifesto"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">Manifesto</div></Link>
+            <Link  onClick={()=>closeMenu()} href="/info/principles"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">Principles</div></Link>
+            <Link  onClick={()=>closeMenu()} href="/info/structure"><div  className="pl-[10px] mb-[80px] py-[4px]  navItem">Structure</div></Link>
+{/*             
+            <div className='mb-[10px]'>Membership</div> */}
+            <Link  onClick={()=>closeMenu()} href="/membership/productions"><div  className="pl-[10px] mb-[4px] py-[10px]  navItem">Productions</div></Link>
+            <Link  onClick={()=>closeMenu()} href="/membership/d-d"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">D+D</div></Link>
+            <Link  onClick={()=>closeMenu()} href="/membership/openings"><div  className="pl-[10px] mb-[80px] py-[4px]  navItem">openings</div></Link>
+          
                
+             <Link onClick={()=>closeMenu()} href="/contact"><div className="pl-[10px] mb-[40px] py-[4px]  navItem">contact</div></Link>
+            </div>
+           
+
+        </div>
+     <div className="w-full ml-[30px] text-right pr-[16px] mb-100px">
+        
+        <div>{!active?"menu":"close"}</div>
+       
+    </div>
+
+   </div> 
+
                 
            ):('')}
            
