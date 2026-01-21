@@ -46,12 +46,12 @@ export default function Navbar({phase, setPhase}:any){
             {/* <div className='mb-[10px]'>Info</div> */}
             <Link onClick={()=>closeMenu()} href="/info/manifesto"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">Manifesto</div></Link>
             <Link  onClick={()=>closeMenu()} href="/info/principles"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">Principles</div></Link>
-            <Link  onClick={()=>closeMenu()} href="/info/structure"><div  className="pl-[10px] mb-[60px] py-[4px]  navItem">Structure</div></Link>
+            <Link  onClick={()=>closeMenu()} href="/info/structure"><div  className="pl-[10px] mb-[40px] py-[4px]  navItem">Structure</div></Link>
 {/*             
             <div className='mb-[10px]'>Membership</div> */}
             <Link  onClick={()=>closeMenu()} href="/membership/productions"><div  className="pl-[10px] mb-[4px] py-[10px]  navItem">Productions</div></Link>
             <Link  onClick={()=>closeMenu()} href="/membership/d-d"><div  className="pl-[10px] mb-[10px] py-[4px]  navItem">D+D</div></Link>
-            <Link  onClick={()=>closeMenu()} href="/membership/openings"><div  className="pl-[10px] mb-[60px] py-[4px]  navItem">openings</div></Link>
+            <Link  onClick={()=>closeMenu()} href="/membership/openings"><div  className="pl-[10px] mb-[40px] py-[4px]  navItem">openings</div></Link>
           
                
              <Link onClick={()=>closeMenu()} href="/contact"><div className="pl-[10px] mb-[40px] py-[4px]  navItem">contact</div></Link>
