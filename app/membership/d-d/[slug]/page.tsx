@@ -4,9 +4,10 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { SwitchContent } from "@/app/lib/util/contentSwitch";
 
-export default async function Home(params:any) {
+export default async function Home({params}:any) {
+  const {slug} = await params
   const query = await getData(`{
-    'project':*[_type=="project" && slug.current == '${params.params.slug}']{"logoUrl":logo.asset->url,title,desc, slug,"work":content[]{desc,"imageUrl":image.asset->url, video{asset->{playbackId}}}, social, status}
+    'project':*[_type=="project" && slug.current == '${slug}']{"logoUrl":logo.asset->url,title,desc, slug,"work":content[]{desc,"imageUrl":image.asset->url, video{asset->{playbackId}}}, social, status}
     }`)
 
   const {project} = query.data
@@ -58,10 +59,10 @@ export default async function Home(params:any) {
   );
 }
 
-export async function generateMetadata(params:any) {
-
+export async function generateMetadata({params}:any) {
+  const {slug} = await params
   const query = await getData(`{
-    'project':*[_type=="project" && slug.current == '${params.params.slug}'][0]{title,desc, slug,"work":content[]{desc,"imageUrl":image.asset->url}},
+    'project':*[_type=="project" && slug.current == '${slug}'][0]{title,desc, slug,"work":content[]{desc,"imageUrl":image.asset->url}},
     'data':*[_type=='settings'][0]{meta{title,description,"image":image.asset->url}}
  }`)
  const {data,project} = query.data  
