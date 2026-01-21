@@ -27,11 +27,15 @@ const nextConfig = {
       fetches: {
         fullUrl: true,
       },
-    },turbopack: {},
-    
+    },
+    experimental: {
+      turbo: {
+       
+      },
+    },
     webpack: (config, { isServer }) => {
       // You might need to add specific webpack configurations here if necessary
       return config;
-    }
+    },
 };
 export default nextConfig;
