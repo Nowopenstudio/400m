@@ -27,7 +27,7 @@ const nextConfig = {
       fetches: {
         fullUrl: true,
       },
-    },
+    },turbopack: {},
     
     webpack: (config, { isServer }) => {
       // You might need to add specific webpack configurations here if necessary
