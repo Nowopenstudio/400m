@@ -28,5 +28,10 @@ const nextConfig = {
         fullUrl: true,
       },
     },
+    
+    webpack: (config, { isServer }) => {
+      // You might need to add specific webpack configurations here if necessary
+      return config;
+    }
 };
 export default nextConfig;
