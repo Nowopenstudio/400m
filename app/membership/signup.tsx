@@ -75,7 +75,17 @@ export default function SignUp({form, contact, settings}:any) {
         setSuccess(true)
     }
 
-  return (
+const applicationsPaused = true
+  if (applicationsPaused) {
+    return (
+      <div className="pt-[80px] col-span-full min-h-[100vh] grid grid-cols-12">
+        <div className="col-start-2 col-span-10 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6 text-nav uppercase">
+          Applications are paused while we move to a more secure system. Please check back soon, or reach out through the contact page.
+        </div>
+      </div>
+    )
+  }
+return (
    
     
     <div className=" pt-[80px]  col-span-full min-h-[100vh]">
