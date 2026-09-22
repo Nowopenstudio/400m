@@ -78,12 +78,18 @@ export default function SignUp({form, contact, settings}:any) {
 const applicationsPaused = true
   if (applicationsPaused) {
     return (
-      <div className="col-span-full flex flex-col gap-[20px] max-w-[640px] min-h-[60vh] pb-[80px]">
-        <h1>Applications are paused</h1>
-        <p className="text-body">We are moving applications to a more secure system. Please check back soon, or reach out through the contact page in the meantime.</p>
+      <div className="pt-[80px] col-span-full min-h-[100vh]">
+        <div className="w-full grid grid-cols-12 mt-[20px]">
+          <div className="col-start-2 col-span-10 px-[20px] sm:px-0 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6">
+            <h1>Applications are paused</h1>
+            <p>We are moving applications to a more secure system. Please check back soon, or reach out through the contact page in the meantime.</p>
+          </div>
+        </div>
       </div>
     )
   }
+
+  return (
 
    
     
