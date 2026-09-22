@@ -2,7 +2,6 @@
 import React, { useEffect, useState, useContext, FormEvent } from "react";
 import { Reveal } from "@/app/lib/util/reveal";
 import {InputContext} from '../signup'
-import addDoc, { delData } from "@/app/lib/util/sanity";
 import { v4 as uuidv4 } from 'uuid';
 import { getData } from "@/app/lib/util/sanity";
 
