@@ -46,18 +46,7 @@ export const scrolltoHash = (element_id: string)=>{
     });
   }
 
-export default async function addDoc(doc:any) {
 
-const postDoc = await client.create(doc).then(res => {return res})
-}
-
-export const delData = (async (query:any) =>{
-
-    const initQuery = query
-    const delContent = await client.delete({
-        query: `*[_type == "${query}"]`
-        })
-    })
 
 
 
