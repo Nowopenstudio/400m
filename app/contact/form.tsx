@@ -2,7 +2,7 @@
 'use client'
 
 import React, { useEffect, useState, useContext, FormEvent } from "react";
-import addDoc, { delData, sendContact } from "@/app/lib/util/sanity";
+import { sendContact } from "@/app/lib/util/sanity";
 import { v4 as uuidv4 } from 'uuid';
 import { PortableText } from "next-sanity";
 import { Reveal } from "../lib/util/reveal";
