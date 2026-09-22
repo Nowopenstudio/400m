@@ -40,8 +40,8 @@ export default function StageTwo() {
 
    })
    newDoc.answers = newAnwsers
-    addDoc(newDoc).then(contextInput.sendSuccess(newDoc) )
-
+    fetch('/api/apply', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(newDoc) })
+      .then(r => { if (r.ok) contextInput.sendSuccess(newDoc); else { setIsLoading(false); alert('Could not submit. Please try again.'); } })
   }
 
 
